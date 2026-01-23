@@ -60,3 +60,18 @@ p {
     border-color: #42110c;
     border-width: 5px;
 }
+
+.accordion-button {
+    background-color: #1F1C18;
+    color: #ECE9E1;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #1F1C18;
+    color: #ECE9E1;
+}
+
+.accordion-item {
+    background-color: #ECE9E1;
+    color: #42110c;
+}
