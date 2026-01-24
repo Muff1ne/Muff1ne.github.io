@@ -54,7 +54,7 @@ p {
     background-image: linear-gradient(#e11a03, #2a1b1a);
     /*border-color: #42110c;
     border-width: 5px;*/
-    box-shadow: 0 0 6px 6px #f6321c;
+    box-shadow: 0 0 12px 6px #f6321c;
     /*Lisäsin ulkoisen hehkun latauspainikkeeseen, jotta olisi painikkeen yli hiirellä liikkuessa selvää, että kyseessä on interaktiivinen painike.*/
 }
 
