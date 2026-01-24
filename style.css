@@ -3,10 +3,6 @@ body {
     background-color: black;
 }
 
-main {
-    
-}
-
 h1 {
     color: #b71200;
     text-decoration: overline;
@@ -31,19 +27,18 @@ p {
 }
 
 .container {
-    background-image: linear-gradient(#8E0E00,#1F1C18);
+    background-image: linear-gradient(#8E0E00, #1F1C18);
     /*background-image: linear-gradient(rgba(217, 136, 82, 0.753), rgba(183, 67, 41, 0.693));
     background-color: rgba(183, 67, 41, 0.693);
     box-shadow: inset 0 0 5px 10px rgba(99, 34, 19, 0.825);*/
     padding: 4rem;
     border-radius: 2rem;
-    margin-bottom: 2rem;
     max-width: 90%;
 }
 
 .btn {
-    background-image: linear-gradient(#8E0E00,#1F1C18);
-   /* background-color: rgba(217, 127, 82, 0.753);
+    background-image: linear-gradient(#8E0E00, #1F1C18);
+    /* background-color: rgba(217, 127, 82, 0.753);
     border-color: rgba(95, 59, 36, 0.753);*/
     border-style: none;
     border-radius: 2rem;
@@ -52,15 +47,15 @@ p {
     margin: 0 auto;
     transition: box-shadow 400ms;
     font-weight: 600;
-    margin-bottom: 2rem;
 }
 
 .btn:hover {
-    
-    background-image: linear-gradient(#e11a03,#2a1b1a);
+
+    background-image: linear-gradient(#e11a03, #2a1b1a);
     /*border-color: #42110c;
     border-width: 5px;*/
-    box-shadow: 0 0 6px 6px #f6321c; /*Lisäsin ulkoisen hehkun latauspainikkeeseen, jotta olisi painikkeen yli hiirellä liikkuessa selvää, että kyseessä on interaktiivinen painike.*/
+    box-shadow: 0 0 6px 6px #f6321c;
+    /*Lisäsin ulkoisen hehkun latauspainikkeeseen, jotta olisi painikkeen yli hiirellä liikkuessa selvää, että kyseessä on interaktiivinen painike.*/
 }
 
 .accordion-button {
@@ -79,7 +74,20 @@ p {
 }
 
 #carouselExampleControls {
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
-    display: block;
 }
+
+.carousel-item {
+    height: 90vh;
+    max-height: 500px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%; /*Lisäsin kuvien korkeudelle 100% sekä object-fit, jotta pienelläkin näytöllä karusellin kuvat olisivat saman korkuisia*/
+    object-fit: cover;
+}
+
+
+
