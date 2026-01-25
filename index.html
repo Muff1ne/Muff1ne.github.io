@@ -17,7 +17,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" id="logotext" href="#">
         <img src="kuvat/redshieldlogo.png" alt="game logo red shield" width="40" height="34"
-          class="d-inline-block align-text-top">
+          class="d-inline-block align-text-center">
         Crown of Conquest</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -28,7 +28,7 @@
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
           <a class="nav-link" href="guide.html">Guide</a>
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="rankings.html">Rankings</a>
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </div>
       </div>
@@ -53,8 +53,26 @@
         land will bear your name?</p>
     </div>
 
-    <a href="#" class="btn btn-lg text-white mt-5">PLAY NOW</a>
   </section>
+  
+  <button type="button" class="btn btn-lg text-white mt-5 mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal">PLAY NOW</button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Sorry, this action does not work</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         We are fixing the issue at the moment, please come back later!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <section class="slideshow mb-5">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">

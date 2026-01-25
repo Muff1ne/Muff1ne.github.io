@@ -12,9 +12,19 @@ h1 {
     font-size: 4rem;
 }
 
+h2 {
+    font-weight: 600;
+    color: #ECE9E1;
+}
+
+.card-title {
+    font-family: knight warrior;
+    font-size: 2rem;
+}
+
 #logotext {
     font-family: knight warrior;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 
 p {
@@ -90,4 +100,17 @@ p {
 }
 
 
+.card {
+    background-color: #1F1C18;
+    color: #ECE9E1;
+}
 
+.card-text {
+    color: #ECE9E1;
+}
+
+@media (max-width: 600px) {
+    #logotext {
+        font-size: 1.4rem; /*Lisäsin pienemmille näytöille pienenevän logotekstin, jotta se ei veisi niin suurta tilaa navigaatiopalkista*/
+    }
+}
