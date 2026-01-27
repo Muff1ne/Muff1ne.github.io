@@ -1,116 +1,123 @@
 body {
-    margin: 0;
-    background-color: black;
+  margin: 0;
+  background-color: black;
+  font-size: 16px;
 }
 
 h1 {
-    color: #b71200;
-    text-decoration: overline;
-    /*text-shadow: -2px -2px rgb(77, 18, 18);*/
-    text-shadow: -1px -1px #baadad;
-    font-family: knight warrior;
-    font-size: 4rem;
+  color: #b62919;
+  /*Jos alempana asetettu liukuväri ei toimi selaimella, niin tämä väri näkyy sen sijaan.*/
+  background: linear-gradient(180deg, #f6321c, #400c01);
+  /* Liukuväri h1 otsikolle, vaihtuu ylhäältä alas asteen mukaan*/
+  -webkit-background-clip: text;
+  /* Asetettu liukuväri näkyy vain tekstin päällä. Väri näkyy vain selaimilla, jotka on Webkit-pohjaisia.*/
+  -webkit-text-fill-color: transparent;
+  /* Muuttaa tekstin perusvärin läpinäkyväksi ominaisuutta tukevilla selaimilla, jolloin liukuväri näkyy */
+  text-decoration: overline;
+  font-family: knight warrior;
+  font-size: 4rem;
 }
 
 h2 {
-    font-weight: 600;
-    color: #ECE9E1;
+  color: #ece9e1;
+  font-size: 1.5rem;
 }
 
 .card-title {
-    font-family: knight warrior;
-    font-size: 2rem;
+  font-family: knight warrior;
+  font-size: 2rem;
 }
 
-#logotext {
-    font-family: knight warrior;
-    font-size: 1.75rem;
+#navbar-logo {
+  font-family: knight warrior;
+  font-size: 1.75rem;
 }
 
 p {
-    font-size: 1.5rem;
-    color: #ECE9E1;
+  font-size: 1.5rem;
+  color: #ece9e1;
 }
 
-#italic {
-    font-style: italic;
+#intro-heading {
+  font-style: italic;
 }
 
 .container {
-    background-image: linear-gradient(#8E0E00, #1F1C18);
-    /*background-image: linear-gradient(rgba(217, 136, 82, 0.753), rgba(183, 67, 41, 0.693));
-    background-color: rgba(183, 67, 41, 0.693);
-    box-shadow: inset 0 0 5px 10px rgba(99, 34, 19, 0.825);*/
-    padding: 4rem;
-    border-radius: 2rem;
-    max-width: 90%;
+  background-image: linear-gradient(#8e0e00, #1f1c18);
+  padding: 4rem;
+  border-radius: 2rem;
+  max-width: 1200px; /*Tekstilaatikon maksimileveys suurille näytöille*/
+  width: 90%; /*Varmistaa, ettei tekstilaatikko vie koko näytön leveyttä*/
 }
 
 .btn {
-    background-image: linear-gradient(#8E0E00, #1F1C18);
-    /* background-color: rgba(217, 127, 82, 0.753);
-    border-color: rgba(95, 59, 36, 0.753);*/
-    border-style: none;
-    border-radius: 2rem;
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-    transition: box-shadow 400ms;
-    font-weight: 600;
+  background-image: linear-gradient(#8e0e00, #1f1c18);
+  border: none; /*Poistaa Bootstrapin omat reunan muotoilut*/
+  border-radius: 2rem;
+  display: block; /*Muuttaa painikkeen lohkoelementiksi, mahdollistaa keskityksen*/
+  margin: auto; /*Siirtää painikkeen sivun keskelle*/
+  padding: 0.75rem 1.5rem; /*Lisää kosketustilaa tekstin ympärille.*/
+  transition: box-shadow 300ms background-image 300ms; /*Tämä määrittää, miten pitkä muutoksen animaatio on jos elementin box-shadow muuttuu*/
+  font-weight: 600;
 }
 
-.btn:hover {
-
-    background-image: linear-gradient(#e11a03, #2a1b1a);
-    /*border-color: #42110c;
-    border-width: 5px;*/
-    box-shadow: 0 0 12px 6px #f6321c;
-    /*Lisäsin ulkoisen hehkun latauspainikkeeseen, jotta olisi painikkeen yli hiirellä liikkuessa selvää, että kyseessä on interaktiivinen painike.*/
+/*Osoittaa kursorilla osoittaessa tai painaessa, että elementti on klikattava.*/
+#downloadbutton:hover,
+#downloadbutton:active {
+  background-image: linear-gradient(
+    #e11a03,
+    #2a1b1a
+  ); /*Napin värit kirkkaammaksi kursorilla osoittaessa.*/
+  box-shadow: 0 0 20px 6px #ff6b4d; /*Napin ulkoinen hehkun latauspainikkeeseen.*/
+  cursor: pointer; /*Hiiren kursori muuttuu painikkeen yli mennessä osoittimeksi -> selkeästi kyseessä painettava nappi.*/
 }
 
 .accordion-button {
-    background-color: #1F1C18;
-    color: #ECE9E1;
+  background-color: #1f1c18;
+  color: #ece9e1;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #1F1C18;
-    color: #ECE9E1;
+  /*Tämä on avatun haitarin yläpalkin taustaväriä varten, ilman tätä haitarin osia avatessa aiemman kohdan taustaväri muuttuisi Bootstrapin perusväriksi*/
+  background-color: #1f1c18;
+  color: #ece9e1;
 }
 
 .accordion-item {
-    background-color: #ECE9E1;
-    color: #42110c;
+  background-color: #ece9e1;
+  color: #42110c;
 }
 
 #carouselExampleControls {
-    max-width: 90%;
-    margin: 0 auto;
+    max-width: 1200px; /*Karusellin maksimileveys suurille näytöille*/
+    width: 90%; /*Varmistaa, ettei karuselli vie koko näytön leveyttä*/
+    margin: auto;
 }
+
 
 .carousel-item {
-    height: 90vh;
-    max-height: 500px;
+  height: 90vh; /*Määrittää karusellille tietyn näytöstä riippuvan korkeuden.*/
+  max-height: 500px; /*Määrittää maksimikorkeuden, jonka yli ei mene suuremmillakaan näytöillä.*/
 }
 
+ /*Karusellin kuvat täyttää koko karusellin leveyden ja korkeuden rikkomatta kuvan mittasuhteita.*/
 .carousel-item img {
-    width: 100%;
-    height: 100%; /*Lisäsin kuvien korkeudelle 100% sekä object-fit, jotta pienelläkin näytöllä karusellin kuvat olisivat saman korkuisia*/
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
 
 .card {
-    background-color: #1F1C18;
-    color: #ECE9E1;
+  background-color: #1f1c18;
+  color: #ece9e1;
 }
 
 .card-text {
-    color: #ECE9E1;
+  color: #ece9e1;
 }
 
 @media (max-width: 600px) {
-    #logotext {
-        font-size: 1.4rem; /*Lisäsin pienemmille näytöille pienenevän logotekstin, jotta se ei veisi niin suurta tilaa navigaatiopalkista*/
-    }
+  #navbar-logo {
+    font-size: 1.4rem; /*Lisäsin pienemmille näytöille pienenevän logotekstin, jotta se ei veisi niin suurta tilaa navigaatiopalkista*/
+  }
 }
