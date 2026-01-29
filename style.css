@@ -15,12 +15,21 @@ h1 {
   /* Muuttaa tekstin perusvärin läpinäkyväksi ominaisuutta tukevilla selaimilla, jolloin liukuväri näkyy */
   text-decoration: overline;
   font-family: knight warrior;
-  font-size: 4rem;
+  font-size: clamp(3rem, 7vw, 4rem); /*clamp määrittää tekstin koon dynaamisesti: min, max, vw=(tekstin näytön mukaan skaalautuva koko)*/
 }
 
 h2 {
+  font-family: Inter;
+  font-size: clamp(1.5rem, 3vw, 1.75rem); /*Suurempi vw -> fontti kasvaa nopeammin näytön mukana*/
   color: #ece9e1;
-  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+p {
+  color: #ece9e1;
+  font-family: Inter;
+  font-size: clamp(1.25rem, 2vw, 1.125rem);
 }
 
 .card-title {
@@ -30,16 +39,20 @@ h2 {
 
 #navbar-logo {
   font-family: knight warrior;
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  letter-spacing: 0.05em; /*Kirjainväli parantaa luettavuutta. em skaalautuu logon fonttikoon mukaan.*/
 }
 
-p {
-  font-size: 1.5rem;
-  color: #ece9e1;
+.nav-link {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-family: Inter;
+  font-weight: 500; /*Paksumpi fontti parantaa näkyvyyttä.*/
+  transition: color 400ms ease; /*Tekee fonttivärin muutoksesta pehmeämmän, ease määrittää muutoksen nopeuden eri vaiheissa.*/
 }
 
-#intro-heading {
-  font-style: italic;
+/*Muuttaa navigaation fonttivärin hiirellä osoittaessa, selkeyttää kyseessä olevan painettava linkki.*/
+.nav-link:hover {
+  color: #b62919;
 }
 
 .container {
@@ -59,6 +72,7 @@ p {
   padding: 0.75rem 1.5rem; /*Lisää kosketustilaa tekstin ympärille.*/
   transition: box-shadow 300ms background-image 300ms; /*Tämä määrittää, miten pitkä muutoksen animaatio on jos elementin box-shadow muuttuu*/
   font-weight: 600;
+  font-family: Inter;
 }
 
 /*Osoittaa kursorilla osoittaessa tai painaessa, että elementti on klikattava.*/
@@ -72,17 +86,19 @@ p {
   cursor: pointer; /*Hiiren kursori muuttuu painikkeen yli mennessä osoittimeksi -> selkeästi kyseessä painettava nappi.*/
 }
 
+/*Haitarin kysymyspalkkien tyyli*/
 .accordion-button {
-  background-color: #1f1c18;
+  background-color: #1f1c18; 
   color: #ece9e1;
 }
 
+/*Tämä on avatun haitarin yläpalkin taustaväri ja tekstin väri.*/
 .accordion-button:not(.collapsed) {
-  /*Tämä on avatun haitarin yläpalkin taustaväriä varten, ilman tätä haitarin osia avatessa aiemman kohdan taustaväri muuttuisi Bootstrapin perusväriksi*/
   background-color: #1f1c18;
   color: #ece9e1;
 }
 
+/*Määrittää haitarin leipätekstin ja sen taustan.*/
 .accordion-item {
   background-color: #ece9e1;
   color: #42110c;
@@ -116,8 +132,3 @@ p {
   color: #ece9e1;
 }
 
-@media (max-width: 600px) {
-  #navbar-logo {
-    font-size: 1.4rem; /*Lisäsin pienemmille näytöille pienenevän logotekstin, jotta se ei veisi niin suurta tilaa navigaatiopalkista*/
-  }
-}
