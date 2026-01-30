@@ -43,10 +43,11 @@
         <h1 class="text-center mb-5">Learn the rules!</h1>
 <section class="tips mb-5">
         <div class="container">
-          <h2 class="text-center mb-5">Quick tips</h2>
+          <h2 class="mb-5 text-center">Quick tips for beginners</h2>
+          <!--Bootstrapin kortit kahden ruudukon sisällä. 2 korttia vierekkäin 2 rivissä, pienillä näytöillä kaikki kortit päällekkäin.-->
             <div class="row">
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
+                <div class="col">
+                    <div class="card mb-4" style="width: 18rem;"> <!--mb-4 määrittää päällekkäisten korttien välin, width=kortin koko ei muutu näytön kavetessa.-->
                         <img class="card-img-top" src="..." alt="">
                         <div class="card-body">
                             <h5 class="card-title">Choose your faction</h5>
@@ -56,8 +57,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
+                <div class="col">
+                    <div class="card mb-4" style="width: 18rem;">
                         <img class="card-img-top" src="..." alt="">
                         <div class="card-body">
                             <h5 class="card-title">Explore, build and collect</h5>
@@ -67,24 +68,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Win battles to become stronger</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            
-                        </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="card mb-4" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Win battles to become stronger</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            of the card's content.</p>
+                        
                     </div>
                 </div>
-
             </div>
+            <div class="col">
+              <div class="card mb-4" style="width: 18rem;">
+                  <img class="card-img-top" src="..." alt="">
+                  <div class="card-body">
+                      <h5 class="card-title">Win battles to become stronger</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                          of the card's content.</p>
+                      
+                  </div>
+              </div>
+          </div>
+            </div>
+
         </div>
+      
       </section>
-<section class="guides mb-5">
+<section class="questions-accordion mb-5">
         <div class="container">
           <h2 class="text-center mb-5">Questions and answers</h2>
+          <!--Tässä on haitari neljällä osiolla.-->
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
@@ -119,6 +135,18 @@
                   <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                       <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Copyrights
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      All images on this site were generated using Nightcafe AI art generator. Bootstrap code from their website was used and modified by me.
                     </div>
                   </div>
                 </div>

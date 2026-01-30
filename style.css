@@ -2,6 +2,7 @@ body {
   margin: 0;
   background-color: black;
   font-size: 16px;
+  font-family: Inter;
 }
 
 h1 {
@@ -13,13 +14,11 @@ h1 {
   /* Asetettu liukuväri näkyy vain tekstin päällä. Väri näkyy vain selaimilla, jotka on Webkit-pohjaisia.*/
   -webkit-text-fill-color: transparent;
   /* Muuttaa tekstin perusvärin läpinäkyväksi ominaisuutta tukevilla selaimilla, jolloin liukuväri näkyy */
-  text-decoration: overline;
   font-family: knight warrior;
   font-size: clamp(3rem, 7vw, 4rem); /*clamp määrittää tekstin koon dynaamisesti: min, max, vw=(tekstin näytön mukaan skaalautuva koko)*/
 }
 
 h2 {
-  font-family: Inter;
   font-size: clamp(1.5rem, 3vw, 1.75rem); /*Suurempi vw -> fontti kasvaa nopeammin näytön mukana*/
   color: #ece9e1;
   font-style: italic;
@@ -45,7 +44,6 @@ p {
 
 .nav-link {
   font-size: clamp(1.125rem, 2vw, 1.5rem);
-  font-family: Inter;
   font-weight: 500; /*Paksumpi fontti parantaa näkyvyyttä.*/
   transition: color 400ms ease; /*Tekee fonttivärin muutoksesta pehmeämmän, ease määrittää muutoksen nopeuden eri vaiheissa.*/
 }
@@ -53,6 +51,11 @@ p {
 /*Muuttaa navigaation fonttivärin hiirellä osoittaessa, selkeyttää kyseessä olevan painettava linkki.*/
 .nav-link:hover {
   color: #b62919;
+}
+
+#logoimage {
+  height: clamp(2rem, 5vw, 3rem);
+  width: auto;
 }
 
 .container {
@@ -67,10 +70,11 @@ p {
   background-image: linear-gradient(#8e0e00, #1f1c18);
   border: none; /*Poistaa Bootstrapin omat reunan muotoilut*/
   border-radius: 2rem;
+  font-size: clamp(1.25rem, 2vw, 1.75rem); /*Responsiivinen fonttikoko, muuttaa samalla koko painikkeen kokoa näytön mukaan.*/
   display: block; /*Muuttaa painikkeen lohkoelementiksi, mahdollistaa keskityksen*/
   margin: auto; /*Siirtää painikkeen sivun keskelle*/
   padding: 0.75rem 1.5rem; /*Lisää kosketustilaa tekstin ympärille.*/
-  transition: box-shadow 300ms background-image 300ms; /*Tämä määrittää, miten pitkä muutoksen animaatio on jos elementin box-shadow muuttuu*/
+  transition: box-shadow 400ms ease background-image 400ms ease; /*Tämä määrittää, miten pitkä muutoksen animaatio on jos elementin box-shadow muuttuu*/
   font-weight: 600;
   font-family: Inter;
 }
@@ -107,16 +111,17 @@ p {
 #carouselExampleControls {
     max-width: 1200px; /*Karusellin maksimileveys suurille näytöille*/
     width: 90%; /*Varmistaa, ettei karuselli vie koko näytön leveyttä*/
-    margin: auto;
+    margin: auto; /*Keskittää.*/
 }
 
 
 .carousel-item {
-  height: 90vh; /*Määrittää karusellille tietyn näytöstä riippuvan korkeuden.*/
+  height: 40vh; /*Määrittää peruskorkeuden, käytännössä näkyy mobiilinäytöillä. Valitsin pienemmän korkeuden, ettei pieni näyttö rajaisi kuvan sisältöä.*/
   max-height: 500px; /*Määrittää maksimikorkeuden, jonka yli ei mene suuremmillakaan näytöillä.*/
 }
 
- /*Karusellin kuvat täyttää koko karusellin leveyden ja korkeuden rikkomatta kuvan mittasuhteita.*/
+
+ /*Näillä asetuksilla karusellin kuvat täyttää koko karusellin leveyden ja korkeuden rikkomatta kuvan mittasuhteita.*/
 .carousel-item img {
   width: 100%;
   height: 100%;
@@ -126,9 +131,22 @@ p {
 .card {
   background-color: #1f1c18;
   color: #ece9e1;
+  margin: auto; /*Keskittää kortit, näkyy pienillä näytöillä joissa kortit päällekkäin.*/
 }
 
 .card-text {
   color: #ece9e1;
 }
 
+/*Media-kyselyt määrittävät sääntöjä, jotka muuttuvat valittujen näyttöleveyksien perusteella. Käytin Bootstrap breakpointteja.*/
+
+  @media (min-width: 768px) and (max-width: 991px){
+    .carousel-item {
+      height: 60vh; /*Suuremmilla näytöillä kuvan korkeus kasvaa.*/
+    }
+}
+@media (min-width: 992px){
+  .carousel-item {
+    height: 80vh; 
+  }
+}
