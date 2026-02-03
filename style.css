@@ -1,7 +1,11 @@
+
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   background-color: black;
-  font-size: 16px;
   font-family: Inter;
 }
 
@@ -27,8 +31,8 @@ h2 {
 
 p {
   color: #ece9e1;
-  font-family: Inter;
-  font-size: clamp(1.25rem, 2vw, 1.125rem);
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  line-height: 1.6;
 }
 
 .card-title {
@@ -43,7 +47,7 @@ p {
 }
 
 .nav-link {
-  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
   font-weight: 500; /*Paksumpi fontti parantaa näkyvyyttä.*/
   transition: color 400ms ease; /*Tekee fonttivärin muutoksesta pehmeämmän, ease määrittää muutoksen nopeuden eri vaiheissa.*/
 }
@@ -76,7 +80,6 @@ p {
   padding: 0.75rem 1.5rem; /*Lisää kosketustilaa tekstin ympärille.*/
   transition: box-shadow 400ms ease background-image 400ms ease; /*Tämä määrittää, miten pitkä muutoksen animaatio on jos elementin box-shadow muuttuu*/
   font-weight: 600;
-  font-family: Inter;
 }
 
 /*Osoittaa kursorilla osoittaessa tai painaessa, että elementti on klikattava.*/
@@ -116,7 +119,7 @@ p {
 
 
 .carousel-item {
-  height: 40vh; /*Määrittää peruskorkeuden, käytännössä näkyy mobiilinäytöillä. Valitsin pienemmän korkeuden, ettei pieni näyttö rajaisi kuvan sisältöä.*/
+  height: 45vh; /*Määrittää peruskorkeuden, käytännössä näkyy mobiilinäytöillä. Valitsin pienemmän korkeuden, ettei pieni näyttö rajaisi kuvan sisältöä.*/
   max-height: 500px; /*Määrittää maksimikorkeuden, jonka yli ei mene suuremmillakaan näytöillä.*/
 }
 
@@ -131,18 +134,26 @@ p {
 .card {
   background-color: #1f1c18;
   color: #ece9e1;
+  letter-spacing: 0.05em;
   margin: auto; /*Keskittää kortit, näkyy pienillä näytöillä joissa kortit päällekkäin.*/
 }
 
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/*Korttien p-elementtien sisäisen tekstin asetukset*/
 .card-text {
-  color: #ece9e1;
+  color: #ece9e1; 
+  letter-spacing: normal;
 }
 
 /*Media-kyselyt määrittävät sääntöjä, jotka muuttuvat valittujen näyttöleveyksien perusteella. Käytin Bootstrap breakpointteja.*/
 
   @media (min-width: 768px) and (max-width: 991px){
     .carousel-item {
-      height: 60vh; /*Suuremmilla näytöillä kuvan korkeus kasvaa.*/
+      height: 55vh; /*Suuremmilla näytöillä kuvan korkeus kasvaa.*/
     }
 }
 @media (min-width: 992px){
