@@ -9,6 +9,13 @@ body {
   font-family: Inter;
 }
 
+.hero-img {
+  max-height: 800px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 3rem;
+}
+
 h1 {
   color: #b62919;
   /*Jos alempana asetettu liukuväri ei toimi selaimella, niin tämä väri näkyy sen sijaan.*/
