@@ -1,58 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="json.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="json.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Tehtävä 1 osa 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="toteutus.html">Tehtävä 1 osa 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pokehaku.html">Tehtävä 2 osa 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pokekaanna.html">Tehtävä 2 osa 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="saa.html">Tehtävä 3</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <main>
-       <div id="vastaus"></div>
-      </main>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Tehtävä 1 osa 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="toteutus.html">Tehtävä 1 osa 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pokehaku.html">Tehtävä 2 osa 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pokekaanna.html">Tehtävä 2 osa 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="saa.html">Tehtävä 3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div id="vastaus" style="text-align: center;"></div>
+  </main>
 
-      <script>
-        fetch('../jsontietue/toinentietue.json')
-        .then (function (response) {
-          return response.json();
-        })
-        .then (function (responseJson) {
-          kerro (responseJson);
-         })
+  <script>
+    fetch('../jsontietue/toinentietue.json')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (responseJson) {
+        kerro(responseJson);
+      })
 
-         .catch(function (error) {
-          document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; /*Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla*/
-        })
+      .catch(function (error) {
+        document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; /*Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla*/
+      })
 
-      </script>
+    function kerro(obj) { /*obj=responseJson*/
+
+      /*let tiedot määrittää, mitä "tiedot" sisältää*/
+      let tiedot = "<h1>" + obj.nimi + "</h1><br>"
+      + "<p>Osallistujat: " + obj.osallistujat + "kpl</p>"
+      + "Osallistujien nimet:<br>";
+
+/*Taulukon nimet listataan tiedot muuttujaan, for silmukka käy taulukon läpi vaihe kerrallaan*/
+      for (let i=0; i<obj.nimet.length;i++) {
+        tiedot += obj.nimet[i] + "</br>"; 
+      }
+
+      tiedot += "<br><p>Kurssi alkaa: " + obj.alku + " ja loppuu " + obj.loppu + ", eli se kestää " + obj.kesto + ".</p>";
+      tiedot += "<p><img id= 'toteutusimg' src='" + obj.kuva + "'><p>"
+
+      document.getElementById("vastaus").innerHTML = tiedot; /*Näyttää tiedot divissä, jonka id=vastaus*/
+    }
+
+  </script>
 </body>
+
 </html>

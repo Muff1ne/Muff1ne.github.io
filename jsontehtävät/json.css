@@ -1,13 +1,20 @@
 
+/*Kaikella bodyn sisällä on reunoihin väliä*/
 body {
     padding: 2rem;
 }
 
+/*Otsikkotekstin siirto keskelle ja väliä navigaatioon*/
 h1 {
     text-align: center;
     margin-top: 1rem;
 }
 
+/*json kuvien leveyden säätely*/
 .img_luokka {
+    width: 100%;
+}
+
+#toteutusimg {
     width: 100%;
 }
