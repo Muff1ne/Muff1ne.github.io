@@ -1,0 +1,15 @@
+{
+    "nimi":"Digitekniikat",
+    "osallistujat":"5",
+    "nimet": [
+        "Jaakko",
+        "Eevi",
+        "Milla",
+        "Kaapo",
+        "Aisa"
+    ],
+    "alku":"2025-01-13",
+    "loppu":"2025-03-14",
+    "kesto":"8 viikkoa",
+    "kuva": "jsonkuva.webp"
+}
