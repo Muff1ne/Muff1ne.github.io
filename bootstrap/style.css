@@ -155,27 +155,29 @@ h4 {
   margin: auto; /*Keskittää kortit, näkyy pienillä näytöillä joissa kortit päällekkäin.*/
 }
 
+/*Määrittää kaikkien korttien kuvat saman suuruisiksi, cover täyttää alueen muuttamatta kuvasuhdetta, vaikka voi rajata kuvaa.*/
 .card-img-top {
   height: 200px;
   object-fit: cover;
 }
 
-/*Korttien p-elementtien sisäisen tekstin asetukset*/
+/*Korttien p-elementtien sisäisen tekstin asetukset.*/
 .card-text {
   color: #ece9e1; 
   letter-spacing: normal;
 }
 
-/*Taulukon reunojen pyöristäminen. */
+/*Taulukon reunojen pyöristäminen, piilottaa kaiken mikä menisi pyöristettyjen kulmien ulkopuolelle. */
 table {
   border-radius: 1rem;
   overflow: hidden;
 }
+
 /*Media-kyselyt määrittävät sääntöjä, jotka muuttuvat valittujen näyttöleveyksien perusteella. Käytin Bootstrap breakpointteja.*/
 
   @media (min-width: 768px) and (max-width: 991px){
     .carousel-item {
-      height: 55vh; /*Suuremmilla näytöillä kuvan korkeus kasvaa.*/
+      height: 55vh; /*Suuremmilla näytöillä karusellin kuvan korkeus kasvaa.*/
     }
 }
 @media (min-width: 992px){

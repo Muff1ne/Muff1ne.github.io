@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="vastaus"></div>
+    <script>
+        fetch ('https://www.freetogame.com/api') /*Hakee json tietueen eri kansiosta*/
+        .then (function (response) {
+            return response.json(); /*Muuttaa haetun vastauksen js olio muotoon*/
+        })
+        .then (function (responseJson) {
+            kerro(responseJson); /*Kutsutaan kerro funktiota ja annetaan sille aiempi js olio*/
+        })
+        .catch(function (error) {
+          document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; /*Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla*/
+        })
+    </script>
+</body>
+</html>

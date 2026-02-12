@@ -1,43 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="json.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="json.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Tehtävä 1 osa 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="toteutus.html">Tehtävä 1 osa 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pokehaku.html">Tehtävä 2 osa 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="pokekaanna.html">Tehtävä 2 osa 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="saa.html">Tehtävä 3</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <main>
-        
-      </main>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">JSON</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Tehtävä 1 osa 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="toteutus.html">Tehtävä 1 osa 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pokehaku.html">Tehtävä 2 osa 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="pokekaanna.html">Tehtävä 2 osa 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="saa.html">Tehtävä 3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <h1>Pokehaku</h1>
+    <div style="text-align: center;"><input class="mt-5" type="text" id="pokemonName" placeholder="Enter Pokemon name">
+      <button onclick="poke()" style="color: rgba(165, 10, 5, 0.817);">Hae</button>
+      <p id="nimi" class="mt-4">Kirjoita laatikkoon Pokemonin nimi</p>
+      <div id="pokenkuva"></div>
+      <!--Tänne tulee käännetty pokekuva ja muut tiedot-->
+      <div id="kaannetty"></div>
+      <p id="pokeinfo"></p>
+    </div>
+
+  </main>
+
+  <script>
+    let poketiedot = null; /**/
+
+    function poke() {
+      const pokeName = document.getElementById("pokemonName").value.toLowerCase();
+
+      fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (responseJson) {
+          pokekuva(responseJson);
+        })
+        .catch(function (error) {
+          document.getElementById("pokenkuva").innerHTML = "<p>Tietoa ei pysty näyttämään</p>";
+        })
+
+        document.getElementById("pokeinfo").innerHTML = ""; /*Tyhjentää käännä-painikkeen näyttämät tiedot kun tehdään uusi haku*/
+        document.getElementById("kaannetty").innerHTML = ""; /*Piilottaa myös painikkeen virhetilanteessa*/
+    }
+
+    function pokekuva(vast) {
+      poketiedot = vast; /*Tallennetaan APIsta haetut tiedot poketiedot merkkijonoon*/
+      let pokeurl = vast.sprites.front_default;
+
+
+      let name = document.getElementById("pokemonName").value;
+
+      document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
+      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeurl + "'>";
+      document.getElementById("pokemonName").value = "";
+      document.getElementById("kaannetty").innerHTML = `<button onclick="kaanna()">Käännä</button>`;
+    }
+
+    function kaanna() {
+      let pokeselka = poketiedot.sprites.back_default; /*Aiemmin poketietoihin on tallennettu kaikki APIsta haettu tieto, tässä niistä tiedoista haetaan kuva*/
+      let tiedot = ""; /*Määritetään merkkijono alempana käytettävää for-loopia varten.*/
+      let muoto = "";
+
+      document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
+      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeselka + "'>"; /*Korvataan pokekuva käännetyllä pokemonin kuvalla*/
+      
+
+
+      /*For loop listaa APIn objektitaulukoiden osat ja tallentaa ne valittuihin merkkijonoihin.*/
+      for (let i = 0; i < poketiedot.abilities.length; i++) {
+        tiedot += poketiedot.abilities[i].ability.name + "<br>";
+      }
+
+      for (let j = 0; j < poketiedot.forms.length; j++) {
+        muoto += poketiedot.forms[j].name + "<br>";
+      }
+
+      /*Näytetään pokemonien tiedot sivustolla*/
+      document.getElementById("pokeinfo").innerHTML = "<b>Exp:</b> " + poketiedot.base_experience
+        + " <br><b>Taidot:</b><br>" + tiedot
+        + "<b>Muodot:</b><br>" + muoto;
+    }
+  </script>
 </body>
+
 </html>
