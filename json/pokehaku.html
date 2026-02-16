@@ -74,12 +74,12 @@
     }
 
     function pokekuva(vast) {
-      let pokeurl = vast.sprites.front_default; /*Määrittää pokemonin kuvan*/
-      let name = document.getElementById("pokemonName").value; /*Hakukenttään kirjoitettu pokemonin nimi*/
+      let pokeurl = vast.sprites.front_default; //Määrittää pokemonin kuvan
+      let name = document.getElementById("pokemonName").value; //Hakukenttään kirjoitettu pokemonin nimi
 
       document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
-      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeurl + "'>"; /*Näyttää pokemonin kuvan sivustolla*/
-      document.getElementById("pokemonName").value = ""; /*Tyhjentää hakukentän*/
+      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeurl + "'>"; //Näyttää pokemonin kuvan sivustolla
+      document.getElementById("pokemonName").value = ""; //Tyhjentää hakukentän
     }
   </script>
 </body>

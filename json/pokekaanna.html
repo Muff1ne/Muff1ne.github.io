@@ -44,11 +44,12 @@
   </nav>
   <main>
     <h1>Pokehaku</h1>
-    <div style="text-align: center;"><input class="mt-5" type="text" id="pokemonName" placeholder="Enter Pokemon name">
+    <div style="text-align: center;">
+      <input class="mt-5" type="text" id="pokemonName" placeholder="Enter Pokemon name">
       <button onclick="poke()" style="color: rgba(165, 10, 5, 0.817);">Hae</button>
       <p id="nimi" class="mt-4">Kirjoita laatikkoon Pokemonin nimi</p>
       <div id="pokenkuva"></div>
-      <!--Tänne tulee käännetty pokekuva ja muut tiedot-->
+      <!--Tänne tulee näkyviin käännetty pokekuva ja muut tiedot-->
       <div id="kaannetty"></div>
       <p id="pokeinfo"></p>
     </div>
@@ -56,11 +57,13 @@
   </main>
 
   <script>
-    let poketiedot = null; /**/
+    let poketiedot = null; //Määritetään poketiedot globaaliksi muuttujaksi, tällä hetkellä muuttuja on tyhjä.
+    let name = ""; //Määritetään pokemonin nimi globaaliksi muuttujaksi, tällä hetkellä tyhjä.
 
     function poke() {
       const pokeName = document.getElementById("pokemonName").value.toLowerCase();
 
+      //Haetaan poketiedot, siirretään ne seuraavaksi suoritettavalle funktiolle pokekuva ja määritetään virhetilanteen viesti
       fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
         .then(function (response) {
           return response.json();
@@ -72,34 +75,33 @@
           document.getElementById("pokenkuva").innerHTML = "<p>Tietoa ei pysty näyttämään</p>";
         })
 
-        document.getElementById("pokeinfo").innerHTML = ""; /*Tyhjentää käännä-painikkeen näyttämät tiedot kun tehdään uusi haku*/
-        document.getElementById("kaannetty").innerHTML = ""; /*Piilottaa myös painikkeen virhetilanteessa*/
+        document.getElementById("pokeinfo").innerHTML = ""; //Tyhjentää käännä-painikkeen näyttämät tiedot kun tehdään uusi haku
+        document.getElementById("kaannetty").innerHTML = ""; //Piilottaa myös painikkeen virhetilanteessa
+        document.getElementById("nimi").innerHTML = ""; //Piilottaa pokemonin nimen virhetilanteessa
     }
 
     function pokekuva(vast) {
-      poketiedot = vast; /*Tallennetaan APIsta haetut tiedot poketiedot merkkijonoon*/
-      let pokeurl = vast.sprites.front_default;
+      poketiedot = vast; //Tallennetaan APIsta haetut tiedot poketiedot merkkijonoon
+      let pokeurl = vast.sprites.front_default; //Pokemonin etukuva tallennetaan muuttujaan pokeurl.
+      name = document.getElementById("pokemonName").value; //Lisätään hakukenttään kirjoitettu nimi nimi-muuttujaan.
 
-
-      let name = document.getElementById("pokemonName").value;
-
-      document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
-      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeurl + "'>";
-      document.getElementById("pokemonName").value = "";
-      document.getElementById("kaannetty").innerHTML = `<button onclick="kaanna()">Käännä</button>`;
+      document.getElementById("nimi").innerHTML = "<b>" + name + "</b>"; //Näytetään hakukenttään kirjoitettu nimi sivulla.
+      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeurl + "'>"; //Näytetään sivustolla pokemonin kuva.
+      document.getElementById("pokemonName").value = ""; //Tyhjentää hakukentän.
+      document.getElementById("kaannetty").innerHTML = `<button onclick="kaanna()">Käännä</button>`; //Näytetään käännä-painike
     }
 
     function kaanna() {
-      let pokeselka = poketiedot.sprites.back_default; /*Aiemmin poketietoihin on tallennettu kaikki APIsta haettu tieto, tässä niistä tiedoista haetaan kuva*/
-      let tiedot = ""; /*Määritetään merkkijono alempana käytettävää for-loopia varten.*/
+      let pokeselka = poketiedot.sprites.back_default; //Aiemmin poketietoihin on tallennettu kaikki APIsta haettu tieto, tässä niistä tiedoista haetaan kuva
+      let tiedot = ""; //Määritetään merkkijono alempana käytettävää for-loopia varten.
       let muoto = "";
 
       document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
-      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeselka + "'>"; /*Korvataan pokekuva käännetyllä pokemonin kuvalla*/
+      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeselka + "'>"; //Korvataan pokekuva käännetyllä pokemonin kuvalla
       
 
 
-      /*For loop listaa APIn objektitaulukoiden osat ja tallentaa ne valittuihin merkkijonoihin.*/
+      //For loop listaa APIn objektitaulukoiden osat ja tallentaa ne valittuihin merkkijonoihin.
       for (let i = 0; i < poketiedot.abilities.length; i++) {
         tiedot += poketiedot.abilities[i].ability.name + "<br>";
       }
@@ -108,7 +110,7 @@
         muoto += poketiedot.forms[j].name + "<br>";
       }
 
-      /*Näytetään pokemonien tiedot sivustolla*/
+      //Näytetään pokemonien tiedot sivustolla
       document.getElementById("pokeinfo").innerHTML = "<b>Exp:</b> " + poketiedot.base_experience
         + " <br><b>Taidot:</b><br>" + tiedot
         + "<b>Muodot:</b><br>" + muoto;

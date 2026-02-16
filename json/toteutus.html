@@ -56,17 +56,17 @@
       })
 
       .catch(function (error) {
-        document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; /*Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla*/
+        document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; //Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla
       })
 
-    function kerro(obj) { /*obj=responseJson*/
+    function kerro(obj) { //obj=responseJson
 
-      /*let tiedot määrittää, mitä "tiedot" sisältää*/
+      //let tiedot määrittää, mitä "tiedot" sisältää
       let tiedot = "<h1>" + obj.nimi + "</h1><br>"
       + "<p>Osallistujat: " + obj.osallistujat + "kpl</p>"
       + "Osallistujien nimet:<br>";
 
-/*Taulukon nimet listataan tiedot muuttujaan, for silmukka käy taulukon läpi vaihe kerrallaan*/
+//Taulukon nimet listataan tiedot muuttujaan, for silmukka käy taulukon läpi vaihe kerrallaan
       for (let i=0; i<obj.nimet.length;i++) {
         tiedot += obj.nimet[i] + "</br>"; 
       }
@@ -74,7 +74,7 @@
       tiedot += "<br><p>Kurssi alkaa: " + obj.alku + " ja loppuu " + obj.loppu + ", eli se kestää " + obj.kesto + ".</p>";
       tiedot += "<p><img id= 'toteutusimg' src='" + obj.kuva + "'><p>"
 
-      document.getElementById("vastaus").innerHTML = tiedot; /*Näyttää tiedot divissä, jonka id=vastaus*/
+      document.getElementById("vastaus").innerHTML = tiedot; //Näyttää tiedot divissä, jonka id=vastaus
     }
 
   </script>

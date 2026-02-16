@@ -40,35 +40,35 @@
         <div id="vastaus"></div>
       </main>
       <script>
-        fetch ('../jsontietue/tietue.json') /*Hakee json tietueen eri kansiosta*/
+        fetch ('../jsontietue/tietue.json') //Hakee json tietueen eri kansiosta
         .then (function (response) {
-            return response.json(); /*Muuttaa haetun vastauksen js olio muotoon*/
+            return response.json(); //Muuttaa haetun vastauksen js olio muotoon
         })
         .then (function (responseJson) {
-            kerro(responseJson); /*Kutsutaan kerro funktiota ja annetaan sille aiempi js olio*/
+            kerro(responseJson); //Kutsutaan kerro funktiota ja annetaan sille aiempi js olio
         })
         .catch(function (error) {
-          document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; /*Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla*/
+          document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; //Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla
         })
 
-        function kerro(obj) { /*obj=responseJson*/
+        function kerro(obj) { //obj=responseJson
 
-          /*let tiedot määrittää, mitä "tiedot" sisältää*/
+          //let tiedot määrittää, mitä "tiedot" sisältää
           let tiedot = "<h1>" + obj.otsikko + "</h1><br>"
-          + obj.kuvaus + "<br><hr>" /*hr lisää sisältöä erottavan viivan kuvauksen ja alla olevan kuvan välille*/
+          + obj.kuvaus + "<br><hr>" //hr lisää sisältöä erottavan viivan kuvauksen ja alla olevan kuvan välille
           + "<p><img class='img_luokka' src='" + obj.kuva + "'></p>"
           + "<center><h2>Opintojakso</h2> Nimi: " + obj.opintojakso.nimi + "<br>"
           + "Tunnus: " + obj.opintojakso.tunnus + "<br>"
           + "Opintopisteet: " + obj.opintojakso.opintopisteet + "<br></center>";
 
-          tiedot += "<h3>Aiheet</h3>"; /*Lisätään aiempiin tietoihin asiaa += merkein*/
-          /*for silmukka tekniikkojen listaamiseen*/
+          tiedot += "<h3>Aiheet</h3>"; //Lisätään aiempiin tietoihin asiaa += merkein
+          //for silmukka tekniikkojen listaamiseen
           for (let i=0; i < obj.tekniikat.length; i++) {
             tiedot += "<b>Aihe: " + obj.tekniikat[i].aihe + "</b>";
             tiedot += " <a href='" + obj.tekniikat[i].linkki + "'>" + obj.tekniikat[i].linkki + "</a><br>";
           }
 
-          document.getElementById("vastaus").innerHTML = tiedot; /*Näyttää tiedot divissä, jonka id=vastaus*/
+          document.getElementById("vastaus").innerHTML = tiedot; //Näyttää tiedot divissä, jonka id=vastaus
         }
 
       </script>

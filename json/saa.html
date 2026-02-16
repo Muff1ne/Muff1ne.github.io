@@ -37,7 +37,40 @@
         </div>
       </nav>
       <main>
-        
+        <h1 class="mt-5">Sää Helsingissä</h1>
+        <div id="saainfo" class="text-center mt-4"></div>
       </main>
+      <script> 
+     
+        fetch(`https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric`)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (responseJson) {
+            saa(responseJson);
+          })
+          .catch(function(error) {
+            document.getElementById("saainfo").innerHTML = "<p>Tietoa ei pysty näyttämään</p>";
+          })
+
+          function saa(data) {
+            let kuvaus = data.weather[0].description;
+            let lampotila = data.main.temp;
+            let tuuli = data.wind.speed;
+            let kuva = data.weather[0].icon; //laitetaan muuttujaan kuva sään ikoni
+            let pvm = new Date();
+            let tunnit = pvm.getHours(); //Tämänhetkiset tunnit esitetään muuttujassa tunnit
+            let minuutit = pvm.getMinutes();
+
+            document.getElementById("saainfo").innerHTML = "<b>Sää:</b><br>" + kuvaus + "<br><b>Lämpötila:</b><br>"
+            + lampotila + " °C<br><b>Tuuli:</b><br>"
+            + tuuli + " m/s<br>"
+            + `<img src="https://openweathermap.org/img/wn/${kuva}.png">` 
+            + "<br>Sää kello " + tunnit + ":" + minuutit;
+            
+            //Näytetään kuva-muuttuja sivulla
+          }
+
+      </script>
 </body>
 </html>
