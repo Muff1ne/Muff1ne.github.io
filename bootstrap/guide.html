@@ -2,15 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crown of Conquest</title>
-     <!--Linkit eri fonttien käyttöä varten-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Crown of Conquest</title>
+  <!--Linkit eri fonttien käyttöä varten-->
   <link href="https://fonts.cdnfonts.com/css/knight-warrior" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
   <!--Bootstrapin CSS ja oman CSS-tiedoston linkkaus viimeisenä-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -18,167 +20,216 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" id="navbar-logo" href="index.html">
-              <img src="kuvat/redshieldlogo.png" alt="game logo red shield" id="logoimage"
-              class="d-inline-block align-text-center">
-                Crown of Conquest</a>
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" id="navbar-logo" href="index.html">
+        <picture>
+          <source srcset="kuvat/redshieldlogo.webp" type="image/webp">
+          <img src="kuvat/redshieldlogo.png" alt="game logo red shield" id="logoimage"
+            class="d-inline-block align-text-center">
+        </picture>
+        Crown of Conquest
+      </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="index.html">Home</a>
-                    <a class="nav-link active" aria-current="page" href="#">Guide</a>
-                    <a class="nav-link" href="rankings.html">Rankings</a>
-                </div>
-            </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Guide</a>
+          <a class="nav-link" href="rankings.html">Rankings</a>
         </div>
-    </nav>
-    <img src="kuvat/heroimgscenery.png" class="img-fluid hero-img" alt="Mountains with clouds forming circles around the sun and a river flowing through the valley">
+      </div>
+    </div>
+  </nav>
+  <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
+    <source srcset="kuvat/heroimgscenery.webp" type="image/webp">
+    <!--Näyttää kuvan webp muodossa jos selain tukee sitä, nopeampi ladata.-->
+    <img src="kuvat/heroimgscenery.png"
+      alt="Mountains with clouds forming circles around the sun and a river flowing through the valley"
+      class="img-fluid hero-img">
+    <!--Sivuston aloituskuva, koko näytön levyinen ja luokka img-fluid=kuva pienenee näytön pienentyessä mutta kuvasuhde pysyy.-->
+  </picture>
 
-    <main>
-        <h1 class="text-center mb-5">Learn the rules!</h1>
-<section class="mb-5">
-        <div class="container">
-          <h2 class="text-center mb-4">Quick tips for beginners</h2>
-          <!--Bootstrapin kortit kahden ruudukon sisällä. 2 korttia vierekkäin 2 rivissä, pienillä näytöillä kaikki kortit päällekkäin.-->
-            <div class="row">
-                <div class="col">
-                    <div class="card mb-4" style="width: 18rem;"> <!--mb-4 määrittää päällekkäisten korttien välin, width=kortin koko ei muutu näytön kavetessa.-->
-                        <img class="card-img-top" src="kuvat/faction_banner.png" alt="Orange faction banner with a picture of the sun">
-                        <div class="card-body">
-                            <h3 class="card-title">Choose your faction</h3>
-                            <p class="card-text">Pick your side out of four options and lead your team to victory.</p>
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card mb-4" style="width: 18rem;">
-                        <img class="card-img-top" src="kuvat/ingame_flower.png" alt="Yellow and glowing ingame flower">
-                        <div class="card-body">
-                            <h3 class="card-title">Explore, build and collect</h3>
-                            <p class="card-text">Discover and conquer lands, craft items, and gather treasures.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="card mb-4" style="width: 18rem;">
-                    <img class="card-img-top" src="kuvat/crossing_swords.png" alt="Two swords crossing on a black background">
-                    <div class="card-body">
-                        <h3 class="card-title">Win battles to become stronger</h3>
-                        <p class="card-text">Fight, level up, and unlock new powers to win even bigger rewards.</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-              <div class="card mb-4" style="width: 18rem;">
-                  <img class="card-img-top" src="kuvat/gameart_fightscene.png" alt="Fight scene with two player characters crossing swords">
-                  <div class="card-body">
-                      <h3 class="card-title">Play the game with friends</h3>
-                      <p class="card-text">Join forces or compete with and against real people.</p>
-                      
-                  </div>
+  <main>
+    <h1 class="text-center mb-5">Learn the rules!</h1>
+    <section class="mb-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Quick tips for beginners</h2>
+        <!--Bootstrapin kortit kahden ruudukon sisällä. 2 korttia vierekkäin 2 rivissä, pienillä näytöillä kaikki kortit päällekkäin.-->
+        <div class="row">
+          <div class="col">
+            <div class="card mb-4" style="width: 18rem;">
+              <!--mb-4 määrittää päällekkäisten korttien välin, width=kortin koko ei muutu näytön kavetessa.-->
+              <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
+                <source srcset="kuvat/faction_banner.webp" type="image/webp">
+              <img class="card-img-top" src="kuvat/faction_banner.png"
+                alt="Orange faction banner with a picture of the sun">
+              </picture>
+              <div class="card-body">
+                <h3 class="card-title">Choose your faction</h3>
+                <p class="card-text">Pick your side out of four options and lead your team to victory.</p>
+
               </div>
+            </div>
           </div>
-            </div>
+          <div class="col">
+            <div class="card mb-4" style="width: 18rem;">
+              <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
+                <source srcset="kuvat/ingame_flower.webp" type="image/webp">
+              <img class="card-img-top" src="kuvat/ingame_flower.png" alt="Yellow and glowing ingame flower">
+              </picture>
+              <div class="card-body">
+                <h3 class="card-title">Explore, build and collect</h3>
+                <p class="card-text">Discover and conquer lands, craft items, and gather treasures.</p>
 
-        </div>
-      
-      </section>
-<section class="mb-5">
-        <div class="container">
-          <h2 class="text-center mb-4">Questions and answers</h2>
-          <!--Tässä on haitari neljällä osiolla.-->
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                  <h3 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> <!--aria-expanded määrittää, onko haitarin osa auki vai kiinni oletuksena.-->
-                      What are factions?
-                    </button>
-                  </h3>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p class="accordion-answers">Factions are powerful alliances that define how you fight, grow, and conquer.
-                        Each faction represents a unique philosophy of war, shaping your heroes’ abilities, preferred combat style, and path to dominance. Choosing a faction isn’t just cosmetic—it determines how you approach battles, defend your territory, and crush your rivals.</p>
-                        <h4>Ironbound Legion</h4>
-                        <p class="accordion-answers">
-                          Masters of steel and raw power.
-                          This faction thrives in close combat, wielding swords, shields, and heavy armor. Their heroes hit hard, endure longer battles, and dominate the front lines through sheer physical strength.</p>
-                          <h4>Arcanum Covenant</h4>
-                        <p class="accordion-answers">Wielders of devastating magic.
-                          Focused on spells, elemental attacks, and battlefield control, this faction overwhelms enemies from a distance. Their magic can turn the tide of battle—but timing and positioning are everything.</p>
-                        <h4>Shadowborn Clans</h4>
-                        <p class="accordion-answers">Swift, cunning, and lethal.
-                          Specializing in speed, precision, and ambush tactics, Shadowborn fighters strike fast and disappear just as quickly. They excel at disrupting enemy formations and stealing territory before opponents can react.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      How to level up?
-                    </button>
-                  </h3>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p class="accordion-answers">Power is earned on the battlefield.</p>
-                        <p class="accordion-answers"> You level up by:</p>
-                        <ul class="accordion-answers"> <li>Winning battles against monsters and rival players</li>
-                          <li>Conquering territories to expand your influence on the world map</li>
-                        <li>Collecting resources from claimed land</li>
-                        <li>Upgrading cities, structures, and heroes to unlock stronger abilities and bonuses</li></ul>
-                        <p class="accordion-answers">Every conquered region fuels your rise, unlocking new units, skills, and strategic options as your legend grows.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      How to win battles?
-                    </button>
-                  </h3>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p class="accordion-answers">Victory comes from strategy—not just strength.</p>
-                      <ul class="accordion-answers">
-                        <li>Choose the right heroes for each battle</li>
-                        <li>Counter enemy tactics—steel can overpower fragile mages, while magic can devastate heavily armored units</li>
-                        <li>Position wisely, using terrain and formations to your advantage</li>
-                        <li>Upgrade abilities to unlock devastating attacks and passive bonuses</li>
-                      </ul>
-                      <p class="accordion-answers">Whether you’re clashing blades up close or raining destruction from afar, understanding the balance between swords, magic, and tactics is the key to domination.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Copyrights
-                    </button>
-                  </h3>
-                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p class="accordion-answers">All images on this site were generated using Nightcafe AI art generator. Content (text) was written by ChatGPT using prompts. Bootstrap code from their website was used and modified by me.</p>
-                    </div>
-                  </div>
-                </div>
               </div>
+            </div>
+          </div>
         </div>
-      </section>
+        <div class="row">
+          <div class="col">
+            <div class="card mb-4" style="width: 18rem;">
+              <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
+                <source srcset="kuvat/crossing_swords.webp" type="image/webp">
+              <img class="card-img-top" src="kuvat/crossing_swords.png" alt="Two swords crossing on a black background">
+              </picture>
+              <div class="card-body">
+                <h3 class="card-title">Win battles to become stronger</h3>
+                <p class="card-text">Fight, level up, and unlock new powers to win even bigger rewards.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4" style="width: 18rem;">
+              <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
+                <source srcset="kuvat/gameart_fightscene.webp" type="image/webp">
+              <img class="card-img-top" src="kuvat/gameart_fightscene.png"
+                alt="Fight scene with two player characters crossing swords">
+              </picture>
+              <div class="card-body">
+                <h3 class="card-title">Play the game with friends</h3>
+                <p class="card-text">Join forces or compete with and against real people.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <section class="mb-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Questions and answers</h2>
+        <!--Tässä on haitari neljällä osiolla.-->
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                <!--aria-expanded määrittää, onko haitarin osa auki vai kiinni oletuksena.-->
+                What are factions?
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p class="accordion-answers">Factions are powerful alliances that define how you fight, grow, and
+                  conquer.
+                  Each faction represents a unique philosophy of war, shaping your heroes’ abilities, preferred combat
+                  style, and path to dominance. Choosing a faction isn’t just cosmetic—it determines how you approach
+                  battles, defend your territory, and crush your rivals.</p>
+                <h4>Ironbound Legion</h4>
+                <p class="accordion-answers">
+                  Masters of steel and raw power.
+                  This faction thrives in close combat, wielding swords, shields, and heavy armor. Their heroes hit
+                  hard, endure longer battles, and dominate the front lines through sheer physical strength.</p>
+                <h4>Arcanum Covenant</h4>
+                <p class="accordion-answers">Wielders of devastating magic.
+                  Focused on spells, elemental attacks, and battlefield control, this faction overwhelms enemies from a
+                  distance. Their magic can turn the tide of battle—but timing and positioning are everything.</p>
+                <h4>Shadowborn Clans</h4>
+                <p class="accordion-answers">Swift, cunning, and lethal.
+                  Specializing in speed, precision, and ambush tactics, Shadowborn fighters strike fast and disappear
+                  just as quickly. They excel at disrupting enemy formations and stealing territory before opponents can
+                  react.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                How to level up?
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p class="accordion-answers">Power is earned on the battlefield.</p>
+                <p class="accordion-answers"> You level up by:</p>
+                <ul class="accordion-answers">
+                  <li>Winning battles against monsters and rival players</li>
+                  <li>Conquering territories to expand your influence on the world map</li>
+                  <li>Collecting resources from claimed land</li>
+                  <li>Upgrading cities, structures, and heroes to unlock stronger abilities and bonuses</li>
+                </ul>
+                <p class="accordion-answers">Every conquered region fuels your rise, unlocking new units, skills, and
+                  strategic options as your legend grows.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                How to win battles?
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p class="accordion-answers">Victory comes from strategy—not just strength.</p>
+                <ul class="accordion-answers">
+                  <li>Choose the right heroes for each battle</li>
+                  <li>Counter enemy tactics—steel can overpower fragile mages, while magic can devastate heavily armored
+                    units</li>
+                  <li>Position wisely, using terrain and formations to your advantage</li>
+                  <li>Upgrade abilities to unlock devastating attacks and passive bonuses</li>
+                </ul>
+                <p class="accordion-answers">Whether you’re clashing blades up close or raining destruction from afar,
+                  understanding the balance between swords, magic, and tactics is the key to domination.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Copyrights
+              </button>
+            </h3>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p class="accordion-answers">All images on this site were generated using Nightcafe AI art generator.
+                  Content (text) was written by ChatGPT using prompts. Bootstrap code from their website was used and
+                  modified by me.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
-    </main>
+  </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
