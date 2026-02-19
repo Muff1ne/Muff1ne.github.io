@@ -1,23 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--Google fontti-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cookie&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&display=swap"
+    rel="stylesheet">
+  <!--Bootstrapin ja omat css tiedostot-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="kokoava.css">
 </head>
+
 <body>
-    <div id="vastaus"></div>
-    <script>
-        fetch ('https://www.freetogame.com/api') /*Hakee json tietueen eri kansiosta*/
-        .then (function (response) {
-            return response.json(); /*Muuttaa haetun vastauksen js olio muotoon*/
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Delish</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="btn active" aria-current="page" href="#">Recipe of the day</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="#">Find recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class=" btn" href="#">Find recipes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section>
+    <h1 class="mb-4">What to cook?</h1>
+    <div class="img-container d-flex justify-content-center">
+      <img src="food_image.avif" class="img-fluid" alt="recipe image">
+      <button type="button" class="btn" id="find_button" onclick="hae()">Find recipe!</button>
+    </div>
+    <div id="vastaus" class="mt-4"></div>
+  </section>
+  <script>
+    function hae() {
+
+      fetch('https://dummyjson.com/recipes') /*Hakee json tietueen eri kansiosta*/
+        .then(function (response) {
+          return response.json(); /*Muuttaa haetun vastauksen js olio muotoon*/
         })
-        .then (function (responseJson) {
-            kerro(responseJson); /*Kutsutaan kerro funktiota ja annetaan sille aiempi js olio*/
+        .then(function (responseJson) {
+          kerro(responseJson); /*Kutsutaan kerro funktiota ja annetaan sille aiempi js olio*/
         })
         .catch(function (error) {
           document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; /*Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla*/
         })
-    </script>
+    }
+
+    function kerro(vast) {
+      let lista = vast.recipes;
+
+      let random = Math.floor(lista.length * Math.random());
+
+      let valinta = lista[random];
+      let ainesosat = "";
+
+      for (let i = 0; i < valinta.ingredients.length; i++) {
+        ainesosat += valinta.ingredients[i] + "<br>";
+      }
+
+
+      document.getElementById("vastaus").innerHTML = "<h2>" + valinta.name + "</h2><br><b>Ingredients:</b><br>" + ainesosat;
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

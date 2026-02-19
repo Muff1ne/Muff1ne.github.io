@@ -1,0 +1,72 @@
+
+body {
+    background: linear-gradient(to bottom, rgb(231, 174, 30), rgb(255, 255, 255));
+    background-repeat: no-repeat;
+    color: rgb(63, 32, 15);
+}
+
+.navbar {
+    background-color: rgb(243, 188, 49);
+}
+
+.navbar-brand {
+    font-family: 'Cookie';
+    font-size: 2.25rem;
+}
+
+section {
+    text-align: center;
+    padding: 2rem;
+}
+
+a.btn, .btn {
+    background-color: rgb(255, 226, 110);
+    border-color: rgb(255, 226, 110);
+    margin: 0.5rem;
+    font-weight: 600;
+    color: rgb(85, 37, 19);
+}
+
+.btn {
+    background-color: rgb(235, 191, 15);
+    border-color: rgb(235, 191, 15);
+}
+
+.navbar .btn:active,
+.navbar .btn.active,
+#find_button:active {
+    background-color: rgb(100, 148, 23);
+    border-color: rgb(100, 148, 23);
+    color: white;
+}
+
+.btn:hover {
+    background-color: rgb(182, 141, 38);
+    border-color: rgb(182, 141, 38);
+    color: rgb(255, 255, 255);
+}
+
+
+h2, h1 {
+    font-family: 'Pacifico';
+}
+
+.img-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    
+}
+
+.img-container img {
+    width: 100%;
+    display: block;
+    height: auto;
+    border-radius: 2rem;
+}
+
+.img-container #find_button {
+    position: absolute;
+    bottom: 10px;
+   
+}

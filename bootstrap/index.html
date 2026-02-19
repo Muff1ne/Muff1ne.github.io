@@ -42,8 +42,12 @@
     </div>
   </nav>
   <!--Sivuston aloituskuva, koko näytön levyinen ja luokka img-fluid=kuva pienenee näytön pienentyessä mutta kuvasuhde pysyy.-->
-  <img src="kuvat/heroimgdragon.png" class="img-fluid hero-img" alt="Red dragon flying among dark clouds above a castle"
-     > <!--Alt teksti selittää kuvan ruudunlukuohjelmalle-->
+ <!-- <img src="kuvat/heroimgdragon.png" class="img-fluid hero-img" alt="Red dragon flying among dark clouds above a castle"
+     >--> <!--Alt teksti selittää kuvan ruudunlukuohjelmalle-->
+     <picture>
+      <source srcset="kuvat/heroimgdragon.webp" type="image/webp"> <!--Näyttää kuvan webp muodossa jos selain tukee sitä, nopeampi ladata.-->
+      <img src="kuvat/heroimgdragon.png" alt="Red dragon" class="img-fluid">
+    </picture>
 
   <main>
     <h1 class="text-center mb-5">Rise to power!</h1>

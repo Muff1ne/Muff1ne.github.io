@@ -6,7 +6,7 @@ html {
 body {
   margin: 0;
   background-color: black;
-  font-family: Inter; /*Jos tekstille ei aseteta erillistä fonttia, siinä tulee olemaan tämä fontti*/
+  font-family: 'Inter', sans-serif; /*Jos tekstille ei aseteta erillistä fonttia, siinä tulee olemaan tämä fontti. Sans-serif tulee näkymään, jos google fonttia ei pystytä näyttämään.*/
 }
 
 .hero-img {
@@ -15,14 +15,13 @@ body {
 }
 
 h1 {
-  color: #b62919;
-  /*Jos alempana asetettu liukuväri ei toimi selaimella, niin tämä väri näkyy sen sijaan.*/
-  background: linear-gradient(180deg, #f6321c, #400c01);
-  /* Liukuväri h1 otsikolle, vaihtuu ylhäältä alas asteen mukaan*/
+  color: #b62919; /*Jos alempana asetettu liukuväri ei toimi selaimella, niin tämä väri näkyy sen sijaan.*/
+  background: linear-gradient(180deg, #f6321c, #400c01); /* Liukuväri h1 otsikolle, vaihtuu ylhäältä alas asteen mukaan*/
   background-clip: text; /*Asennettu liukuväri näkyy vain tekstin päällä. Väri näkyy selaimilla, jotka eivät ole Webkit-pohjaisia.*/
   -webkit-background-clip: text; /* Asetettu liukuväri näkyy vain tekstin päällä. Väri näkyy vain selaimilla, jotka on Webkit-pohjaisia.*/
   -webkit-text-fill-color: transparent; /* Muuttaa tekstin perusvärin läpinäkyväksi ominaisuutta tukevilla selaimilla, jolloin liukuväri näkyy */
-  font-family: 'KNIGHT WARRIOR', sans-serif;
+  font-family: 'KNIGHT WARRIOR', serif; /*serif on varafontti.*/
+  font-weight: 600; /*Paksumpi fonttikoko, jotta myös serif näkyy selkeämmin.*/
   font-size: clamp(3rem, 7vw, 4rem); /*clamp määrittää tekstin koon dynaamisesti: min, max, vw=(tekstin näytön mukaan skaalautuva koko)*/
 }
 
@@ -30,13 +29,13 @@ h2 {
   font-size: clamp(1.5rem, 3vw, 1.75rem); /*Suurempi vw -> fontti kasvaa nopeammin näytön mukana*/
   color: #ece9e1;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 600; 
 }
 
 p {
   color: #ece9e1;
   font-size: clamp(1.25rem, 1.6vw, 1.5rem);
-  line-height: 1.6;
+  line-height: 1.5; /*Riviväli tekee tekstistä helppolukuisempaa.*/
 }
 
 .accordion-answers {
@@ -52,12 +51,13 @@ h4 {
 }
 
 .card-title {
-  font-family: 'KNIGHT WARRIOR', sans-serif;
+  font-family: 'KNIGHT WARRIOR', serif;
   font-size: 2rem;
 }
 
 #navbar-logo {
-  font-family: 'KNIGHT WARRIOR', sans-serif;
+  font-family: 'KNIGHT WARRIOR', serif;
+  font-weight: 600;
   font-size: clamp(1.5rem, 3.5vw, 2rem);
   letter-spacing: 0.05em; /*Kirjainväli parantaa luettavuutta. em skaalautuu logon fonttikoon mukaan.*/
 }
