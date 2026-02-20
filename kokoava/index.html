@@ -20,40 +20,50 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Delish</a>
+      <a class="navbar-brand" href="#">
+        <img src="logo.webp" alt="cooking app logo" id="logo" class="d-inline-block align-text-center">
+        Delish!</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
+      <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="btn active" aria-current="page" href="#">Recipe of the day</a>
+            <a class="btn active" aria-current="page" href="index.html">Recipe of the day</a>
           </li>
           <li class="nav-item">
-            <a class="btn" href="#">Find recipes</a>
+            <a class="btn" href="findrecipe.html">Find recipes</a>
           </li>
           <li class="nav-item">
             <a class="btn" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class=" btn" href="#">Find recipes</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <section>
-    <h1 class="mb-4">What to cook?</h1>
+  <section class="mb-5">
+    <h1 class="mb-4">What to <em style="color: rgb(55, 122, 58);">cook?</em></h1>
     <div class="img-container d-flex justify-content-center">
-      <img src="food_image.avif" class="img-fluid" alt="recipe image">
+      <img src="food_image.avif" id="ruokakuva" class="img-fluid" alt="recipe image">
       <button type="button" class="btn" id="find_button" onclick="hae()">Find recipe!</button>
     </div>
-    <div id="vastaus" class="mt-4"></div>
+
+    <div id="info" class="my-5 text-center"></div>
+    <div id="nimi" class=" mb-4 text-center"></div>
+
+    <div id="ruudukko">
+      <div class="row">
+        <div class="col-md" id="resepti">
+        </div>
+        <div class="col-md" id="ohjeistus">
+        </div>
+      </div>
+    </div>
   </section>
+
   <script>
     function hae() {
-
       fetch('https://dummyjson.com/recipes') /*Hakee json tietueen eri kansiosta*/
         .then(function (response) {
           return response.json(); /*Muuttaa haetun vastauksen js olio muotoon*/
@@ -68,18 +78,24 @@
 
     function kerro(vast) {
       let lista = vast.recipes;
-
       let random = Math.floor(lista.length * Math.random());
-
       let valinta = lista[random];
       let ainesosat = "";
+      let ohjeet = "";
 
       for (let i = 0; i < valinta.ingredients.length; i++) {
         ainesosat += valinta.ingredients[i] + "<br>";
       }
 
+      for (let j = 1; j < valinta.instructions.length; j++) {
+        ohjeet += j + ". " + valinta.instructions[j] + "<br>";
+      }
 
-      document.getElementById("vastaus").innerHTML = "<h2>" + valinta.name + "</h2><br><b>Ingredients:</b><br>" + ainesosat;
+      document.getElementById("ruokakuva").src = valinta.image;
+      document.getElementById("nimi").innerHTML = "<h2>" + valinta.name + "</h2>";
+      document.getElementById("info").innerHTML = "<b>Prep time:</b> " + valinta.prepTimeMinutes + " minutes<br><b>Cooking time:</b> " + valinta.cookTimeMinutes + " minutes<br><b>Servings:</b> " + valinta.servings;
+      document.getElementById("resepti").innerHTML = "<br><b>Ingredients:</b><br>" + ainesosat;
+      document.getElementById("ohjeistus").innerHTML = "</h2><br><b>Instructions:</b><br>" + ohjeet;
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

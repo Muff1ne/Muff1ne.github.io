@@ -1,7 +1,8 @@
 
 body {
-    background: linear-gradient(to bottom, rgb(231, 174, 30), rgb(255, 255, 255));
+    background: linear-gradient(to bottom, rgb(243, 188, 49), rgb(255, 255, 255));
     background-repeat: no-repeat;
+    background-attachment: fixed;
     color: rgb(63, 32, 15);
 }
 
@@ -9,15 +10,21 @@ body {
     background-color: rgb(243, 188, 49);
 }
 
+
 .navbar-brand {
     font-family: 'Cookie';
-    font-size: 2.25rem;
+    font-size: clamp(2.25rem, 6vw, 2.75rem);
+}
+
+#logo {
+    width: clamp(2.5rem, 7vw, 3.5rem);
 }
 
 section {
-    text-align: center;
     padding: 2rem;
 }
+
+
 
 a.btn, .btn {
     background-color: rgb(255, 226, 110);
@@ -51,11 +58,16 @@ h2, h1 {
     font-family: 'Pacifico';
 }
 
+h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    text-align: center;
+}
+
 .img-container {
     position: relative;
-    max-width: 600px;
+    width: 80vw;
+    max-width: 650px;
     margin: auto;
-    
 }
 
 .img-container img {
@@ -68,5 +80,14 @@ h2, h1 {
 .img-container #find_button {
     position: absolute;
     bottom: 10px;
-   
 }
+
+#ruudukko {
+ max-width: 650px;
+ margin: auto;
+}
+
+#resepti, #ohjeistus {
+padding-left: 4rem;
+}
+

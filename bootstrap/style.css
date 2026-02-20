@@ -6,13 +6,22 @@ html {
 body {
   margin: 0;
   background-color: black;
-  font-family: 'Inter', sans-serif; /*Jos tekstille ei aseteta erillistä fonttia, siinä tulee olemaan tämä fontti. Sans-serif tulee näkymään, jos google fonttia ei pystytä näyttämään.*/
-  font-display: swap;
+  font-family:'Inter', sans-serif; /*Jos tekstille ei aseteta erillistä fonttia, siinä tulee olemaan tämä fontti. Sans-serif tulee näkymään, jos google fonttia ei pystytä näyttämään.*/
+  font-display: swap; /*Google fonttien latautuessa selain näyttää varafontin niin, että teksti on heti näkyvissä.*/
+  color: #ece9e1;
 }
 
 .hero-img {
-  margin-bottom: 3rem; /*Lisää tilaa kuvan ja seuraavan elementin välille. Rem on skaalautuva yksikkö, joten käytän sitä*/
-  width: 100%; /*Kuva peittää sivun laidasta laitaan vaakasuunnassa*/
+  margin-bottom: 3rem; /*Lisää tilaa kuvan ja seuraavan elementin välille. Rem on skaalautuva yksikkö, joten käytän sitä.*/
+  width: 100%; /*Kuva peittää sivun laidasta laitaan vaakasuunnassa.*/
+}
+
+hr {
+  border: none; /*Poistaa elementin oletusrajat.*/
+  height: 3px; /*Tekee viivasta paksumman.*/
+  background-color: #f6321c;
+  border-radius: 2px; /*Pyöristää kulmat.*/
+  margin-bottom: 3rem;
 }
 
 h1 {
@@ -23,33 +32,32 @@ h1 {
   -webkit-text-fill-color: transparent; /* Muuttaa tekstin perusvärin läpinäkyväksi ominaisuutta tukevilla selaimilla, jolloin liukuväri näkyy */
   font-family: 'KNIGHT WARRIOR', serif; /*serif on varafontti.*/
   font-weight: 600; /*Paksumpi fonttikoko, jotta myös serif näkyy selkeämmin.*/
-  font-display: swap; /*Google fonttien latautuessa selain näyttää varafontin, että teksti on heti näkyvissä.*/
+  font-display: swap; 
   font-size: clamp(3rem, 7vw, 4rem); /*clamp määrittää tekstin koon dynaamisesti: min, max, vw=(tekstin näytön mukaan skaalautuva koko)*/
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3vw, 1.75rem); /*Suurempi vw -> fontti kasvaa nopeammin näytön mukana*/
-  color: #ece9e1;
-  font-style: italic;
-  font-weight: 600; 
+  font-size: clamp(1.75rem, 3vw, 2rem); /*Suurempi vw -> fontti kasvaa nopeammin näytön mukana*/
+  font-weight: 500;
 }
 
 p {
-  color: #ece9e1;
   font-size: clamp(1.25rem, 1.6vw, 1.5rem);
   line-height: 1.5; /*Riviväli tekee tekstistä helppolukuisempaa.*/
 }
 
-.accordion-answers {
+/*Haitarin vastauslaatikkojen leipätekstin asetukset.*/
+.accordion-answers, h4 {
   color: #2a1b1a;
   font-size: clamp(1.125rem, 1.6vw, 1.25rem);
-  margin: 1rem;
+}
+
+.accordion-answers {
+  margin: 1rem; /*Tekstin ympärille tyhjää tilaa.*/
 }
 
 h4 {
-  color: #2a1b1a;
-  font-size: clamp(1.125rem, 1.6vw, 1.25rem);
-  margin-left: 1rem;
+  margin-left: 1rem; /*Haitarin väliotsikoiden väli reunasta.*/
 }
 
 .card-title {
@@ -93,7 +101,7 @@ h4 {
   background-image: linear-gradient(#8e0e00, #1f1c18);
   border: none; /*Poistaa Bootstrapin omat reunan muotoilut*/
   border-radius: 2rem;
-  font-size: clamp(1.25rem, 2vw, 1.75rem); /*Responsiivinen fonttikoko, muuttaa samalla koko painikkeen kokoa näytön mukaan.*/
+  font-size: clamp(1.25rem, 2vw, 1.5rem); /*Responsiivinen fonttikoko, muuttaa samalla koko painikkeen kokoa näytön mukaan.*/
   display: block; /*Muuttaa painikkeen lohkoelementiksi, mahdollistaa keskityksen*/
   margin: auto; /*Siirtää painikkeen sivun keskelle*/
   padding: 0.75rem 1.5rem; /*Lisää kosketustilaa tekstin ympärille.*/
@@ -110,6 +118,16 @@ h4 {
   ); /*Napin värit kirkkaammaksi kursorilla osoittaessa.*/
   box-shadow: 0 0 20px 6px #ff6b4d; /*Napin ulkoinen hehkun latauspainikkeeseen.*/
   cursor: pointer; /*Hiiren kursori muuttuu painikkeen yli mennessä osoittimeksi -> selkeästi kyseessä painettava nappi.*/
+}
+
+/*Avatun modaalin taustaväri.*/
+.modal-content {
+  background-color: #5a1010;
+}
+
+/*Avatun modaalin tekstin väri.*/
+.modal-title, .modal-body {
+  color: #ece9e1;
 }
 
 /*Haitarin kysymyspalkkien tyyli*/
@@ -134,12 +152,12 @@ h4 {
 #carouselExampleControls {
     max-width: 1200px; /*Karusellin maksimileveys suurille näytöille*/
     width: 90%; /*Varmistaa, ettei karuselli vie koko näytön leveyttä*/
-    margin: auto; /*Keskittää.*/
+    margin: auto; /*Keskittää karusellin.*/
 }
 
 
 .carousel-item {
-  height: 45vh; /*Määrittää peruskorkeuden, käytännössä näkyy mobiilinäytöillä. Valitsin pienemmän korkeuden, ettei pieni näyttö rajaisi kuvan sisältöä.*/
+  height: 45vh; /*Määrittää peruskorkeuden, 45% selaimen ikkunan korkeudesta.*/
   max-height: 500px; /*Määrittää maksimikorkeuden, jonka yli ei mene suuremmillakaan näytöillä.*/
 }
 
@@ -152,10 +170,11 @@ h4 {
 }
 
 .card {
+  max-width: 18rem;
   background-color: #1f1c18;
   color: #ece9e1;
   letter-spacing: 0.05em;
-  margin: auto; /*Keskittää kortit, näkyy pienillä näytöillä joissa kortit päällekkäin.*/
+  margin: auto; /*Keskittää kortit.*/
 }
 
 /*Määrittää kaikkien korttien kuvat saman suuruisiksi, cover täyttää alueen muuttamatta kuvasuhdetta, vaikka voi rajata kuvaa.*/
