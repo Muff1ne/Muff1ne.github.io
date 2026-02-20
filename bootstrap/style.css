@@ -193,6 +193,7 @@ h4 {
 table {
   border-radius: 1rem;
   overflow: hidden;
+  width: 80%;
 }
 
 /*Media-kyselyt määrittävät sääntöjä, jotka muuttuvat valittujen näyttöleveyksien perusteella. Käytin Bootstrap breakpointteja.*/
