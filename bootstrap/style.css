@@ -89,12 +89,12 @@ h4 {
   width: auto;
 }
 
-.container {
+.custom-container {
   background-image: linear-gradient(#8e0e00, #1f1c18);
-  padding: 4rem;
+  padding: 1rem;
   border-radius: 2rem;
   max-width: 1200px; /*Tekstilaatikon maksimileveys suurille näytöille*/
-  width: 90%; /*Varmistaa, ettei tekstilaatikko vie koko näytön leveyttä*/
+   /*Varmistaa, ettei tekstilaatikko vie koko näytön leveyttä*/
 }
 
 .btn {
@@ -193,7 +193,6 @@ h4 {
 table {
   border-radius: 1rem;
   overflow: hidden;
-  width: 80%;
 }
 
 /*Media-kyselyt määrittävät sääntöjä, jotka muuttuvat valittujen näyttöleveyksien perusteella. Käytin Bootstrap breakpointteja.*/
@@ -202,9 +201,21 @@ table {
     .carousel-item {
       height: 55vh; /*Suuremmilla näytöillä karusellin kuvan korkeus kasvaa.*/
     }
+
+    .custom-container {
+      padding: 3rem; /* Suuremmilla näytöillä myös tekstilaatikoiden ja niiden sisällön välinen tila kasvaa. */
+      width: 90%;
+    }
 }
 @media (min-width: 992px){
   .carousel-item {
     height: 80vh; 
   }
+  .custom-container {
+    padding: 4rem; 
+    width: 90%;
+  }
 }
+
+
+

@@ -56,12 +56,12 @@
   <main>
     <h1 class="text-center mb-5">Learn the rules!</h1>
     <section class="mb-5">
-      <div class="container">
+      <div class="container custom-container">
         <h2 class="text-center mb-4">Quick tips for beginners</h2><hr>
         <!--Bootstrapin kortit kahden ruudukon sisällä. 2 korttia vierekkäin 2 rivissä, pienillä näytöillä kaikki kortit päällekkäin.-->
-        <div class="row">
-          <div class="col">
-            <div class="card mb-4">
+        <div class="row g-4"> <!--g-4 määrittää korttien välisen tilan.-->
+          <div class="col-12 col-md-6 col-lg-3"> <!--md-6 tarkoittaa, että-->
+            <div class="card h-100">
               <!--mb-4 määrittää päällekkäisten korttien välin, width=kortin koko ei muutu näytön kavetessa.-->
               <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
                 <source srcset="kuvat/faction_banner.webp" type="image/webp">
@@ -75,8 +75,8 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card mb-4">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
               <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
                 <source srcset="kuvat/ingame_flower.webp" type="image/webp">
               <img class="card-img-top" src="kuvat/ingame_flower.png" alt="Yellow and glowing ingame flower">
@@ -88,10 +88,10 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="card mb-4">
+        
+       
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
               <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
                 <source srcset="kuvat/crossing_swords.webp" type="image/webp">
               <img class="card-img-top" src="kuvat/crossing_swords.png" alt="Two swords crossing on a black background">
@@ -103,8 +103,8 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card mb-4">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100">
               <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
                 <source srcset="kuvat/gameart_fightscene.webp" type="image/webp">
               <img class="card-img-top" src="kuvat/gameart_fightscene.png"
@@ -118,12 +118,12 @@
             </div>
           </div>
         </div>
-
+      </div>
       </div>
 
     </section>
     <section class="mb-5">
-      <div class="container">
+      <div class="container custom-container">
         <h2 class="text-center mb-4">Questions and answers</h2><hr>
         <!--Tässä on haitari neljällä osiolla.-->
         <div class="accordion" id="accordionExample">
