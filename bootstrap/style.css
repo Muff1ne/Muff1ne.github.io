@@ -7,7 +7,6 @@ body {
   margin: 0;
   background-color: black;
   font-family:'Inter', sans-serif; /*Jos tekstille ei aseteta erillistä fonttia, siinä tulee olemaan tämä fontti. Sans-serif tulee näkymään, jos google fonttia ei pystytä näyttämään.*/
-  font-display: swap; /*Google fonttien latautuessa selain näyttää varafontin niin, että teksti on heti näkyvissä.*/
   color: #ece9e1;
 }
 
@@ -32,13 +31,12 @@ h1 {
   -webkit-text-fill-color: transparent; /* Muuttaa tekstin perusvärin läpinäkyväksi ominaisuutta tukevilla selaimilla, jolloin liukuväri näkyy */
   font-family: 'KNIGHT WARRIOR', serif; /*serif on varafontti.*/
   font-weight: 600; /*Paksumpi fonttikoko, jotta myös serif näkyy selkeämmin.*/
-  font-display: swap; 
   font-size: clamp(3rem, 7vw, 4rem); /*clamp määrittää tekstin koon dynaamisesti: min, max, vw=(tekstin näytön mukaan skaalautuva koko)*/
 }
 
 h2 {
   font-size: clamp(1.75rem, 3vw, 2rem); /*Suurempi vw -> fontti kasvaa nopeammin näytön mukana*/
-  font-weight: 500;
+  font-weight: 600;
 }
 
 p {
@@ -68,7 +66,6 @@ h4 {
 #navbar-logo {
   font-family: 'KNIGHT WARRIOR', serif;
   font-weight: 600;
-  font-display: swap;
   font-size: clamp(1.5rem, 3.5vw, 2rem);
   letter-spacing: 0.05em; /*Kirjainväli parantaa luettavuutta. em skaalautuu logon fonttikoon mukaan.*/
 }
@@ -97,7 +94,7 @@ h4 {
   width: 95%;/*Varmistaa, ettei tekstilaatikko vie koko näytön leveyttä*/
 }
 
-.btn {
+#downloadbutton {
   background-image: linear-gradient(#8e0e00, #1f1c18);
   border: none; /*Poistaa Bootstrapin omat reunan muotoilut*/
   border-radius: 2rem;
@@ -122,12 +119,24 @@ h4 {
 
 /*Avatun modaalin taustaväri.*/
 .modal-content {
-  background-color: #5a1010;
+  background-color: #8e0e00;
 }
 
 /*Avatun modaalin tekstin väri.*/
 .modal-title, .modal-body {
   color: #ece9e1;
+}
+
+/*Avatun modaalin "close" painikkeen muotoilu*/
+#modal-button {
+  color: #ece9e1;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  border: none; /*Poistaa Bootstrapin painikkeen reuna-asetukset.*/
+}
+
+#modal-button:hover {
+  color: #2a1b1a;
 }
 
 /*Haitarin kysymyspalkkien tyyli*/
@@ -193,6 +202,10 @@ h4 {
 table {
   border-radius: 1rem;
   overflow: hidden;
+}
+
+.table td, .table th {
+  background-color: #1f1c18; /*Muutetaan vähän taulukon väriä sivuston värimaailmaan sopivaksi.*/
 }
 
 /*Media-kyselyt määrittävät sääntöjä, jotka muuttuvat valittujen näyttöleveyksien perusteella. Käytin Bootstrap breakpointteja.*/
