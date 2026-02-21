@@ -91,10 +91,10 @@ h4 {
 
 .custom-container {
   background-image: linear-gradient(#8e0e00, #1f1c18);
-  padding: 1rem;
+  padding: 2rem 1rem; /*2rem väliä pystysuunnassa, 1rem vaakasuunnassa*/
   border-radius: 2rem;
   max-width: 1200px; /*Tekstilaatikon maksimileveys suurille näytöille*/
-   /*Varmistaa, ettei tekstilaatikko vie koko näytön leveyttä*/
+  width: 95%;/*Varmistaa, ettei tekstilaatikko vie koko näytön leveyttä*/
 }
 
 .btn {
@@ -203,8 +203,8 @@ table {
     }
 
     .custom-container {
-      padding: 3rem; /* Suuremmilla näytöillä myös tekstilaatikoiden ja niiden sisällön välinen tila kasvaa. */
-      width: 90%;
+      padding: 3rem; /* Suuremmilla näytöillä myös tekstilaatikoiden ja niiden sisällön välinen tila kasvaa.*/
+      width: 90%; /*Tekstilaatikot täyttävät suurilla näytöillä pienemmän osan selaimen leveydestä.*/
     }
 }
 @media (min-width: 992px){
