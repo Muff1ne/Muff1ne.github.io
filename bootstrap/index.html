@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8"> <!--Määrittää sivun käyttämän merkistöstandardin-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Tekee sivustosta responsiivisen mobiilissa-->
-  <title>Crown of Conquest</title>
+  <title>Crown of Conquest – Homepage</title>
   <!--Linkit kahden eri fontin käyttöä varten-->
   <link href="https://fonts.cdnfonts.com/css/knight-warrior" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,36 +20,32 @@
   <!--Responsiivinen Bootstrap valikko. Md tarkoittaa, että 768px ja sen suuremmilla näytöillä navigaatio näkyy kokonaan, pienemmillä näytöillä hampurilaisvalikko.-->
   <nav class="navbar navbar-expand-md navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" id="navbar-logo" href="#">
-        <picture>
+      <a class="navbar-brand" id="navbar-logo" href="index.html"> <!--Navigaation logo ja sivuston nimi linkkinä-->
+        <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
           <source srcset="kuvat/redshieldlogo.webp" type="image/webp">
           <img src="kuvat/redshieldlogo.png" alt="game logo red shield" id="logoimage"
             class="d-inline-block align-text-center">
         </picture>
         Crown of Conquest
       </a>
-
       <!--Hampurilaisvalikon painike. collapse=navigaatio piilossa ennen kuin painetaan painiketta.-->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
-        <!--Navigaation linkit suuremmilla näytöillä sivun oikealla reunalla-->
+      <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup"> <!--flex-row-reverse tekee sen, että navigaation linkit sivun oikealla reunalla.-->
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="guide.html">Guide</a>
-          <a class="nav-link" href="rankings.html">Rankings</a>
+          <a class="nav-link active me-4" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link me-4" href="guide.html">Guide</a>
+          <a class="nav-link me-4" href="rankings.html">Rankings</a>
         </div>
       </div>
     </div>
   </nav>
 
   <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
-    <source srcset="kuvat/heroimgdragon.webp" type="image/webp">
-    <!--Näyttää kuvan webp muodossa jos selain tukee sitä, nopeampi ladata.-->
-    <img src="kuvat/heroimgdragon.png" alt="Red dragon flying above a castle" class="img-fluid hero-img">
-    <!--Sivuston aloituskuva, koko näytön levyinen ja luokka img-fluid=kuva pienenee näytön pienentyessä mutta kuvasuhde pysyy.-->
+    <source srcset="kuvat/heroimgdragon.webp" type="image/webp"> <!--Näyttää kuvan webp muodossa jos selain tukee sitä, nopeampi ladata.-->
+    <img src="kuvat/heroimgdragon.png" alt="Red dragon flying above a castle" class="img-fluid hero-img"> <!--Sivuston aloituskuva, koko näytön levyinen ja luokka img-fluid=kuva pienenee näytön pienentyessä mutta kuvasuhde pysyy.-->
   </picture>
 
   <main>
@@ -61,22 +56,16 @@
         <hr>
         <p class="text-center" style="font-style: italic;">
           Step into a realm where power is earned, territory is conquered, and
-          legends are forged.
-        </p>
-
-        <p>
-          In this ever-expanding fantasy world, you’ll lead brave heroes into
+          legends are forged.</p>
+        <p>In this ever-expanding fantasy world, you’ll lead brave heroes into
           battle against fearsome enemies, sharpening their skills and
           unlocking devastating abilities as they rise in strength. Every
           victory brings you closer to claiming new lands—and stealing them
-          from rivals who dare stand in your way.
-        </p>
-        <p>
-          Build your army, master combat, and prove your dominance on a living
+          from rivals who dare stand in your way.</p>
+        <p>Build your army, master combat, and prove your dominance on a living
           map shaped by war. Whether you’re fighting monsters or clashing with
           other players for control, only the bold will thrive. The
-          battlefield awaits—how much land will bear your name?
-        </p>
+          battlefield awaits—how much land will bear your name?</p>
       </div>
     </section>
     <!--Bootstrapin painike, mt ja mb määrittää ylä- ja alamarginaalit. Nappia painaessa avautuu alempana oleva modaali.-->
@@ -136,7 +125,7 @@
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
         data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">Previous</span> <!--Luokka piilottaa tekstin näkyvistä.-->
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
         data-bs-slide="next">
@@ -148,5 +137,4 @@
   <!--Linkitys Bootstrapin Javascript ominaisuuksiin-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
