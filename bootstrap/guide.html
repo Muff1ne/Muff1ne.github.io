@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,12 +57,13 @@
         <hr>
         <!--Bootstrapin kortit responsiivisen ruudukon sisällä.-->
         <div class="row g-4"> <!--g-4 määrittää korttien välisen tilan.-->
-          <div class="col-12 col-md-6 col-lg-3"> <!--Määritetään kuinka suuren osan ruudukon leveydestä elementti vie eri näyttökooilla, eli montako elementtiä mahtuu vierekkäin.-->
+          <div class="col-12 col-md-6 col-lg-3">
+            <!--Määritetään kuinka suuren osan ruudukon leveydestä elementti vie eri näyttökooilla, eli montako elementtiä mahtuu vierekkäin.-->
             <div class="card h-100"> <!--h-100 määrittää kaikki kortit saman korkuisiksi.-->
               <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
                 <source srcset="kuvat/faction_banner.webp" type="image/webp">
-              <img class="card-img-top" src="kuvat/faction_banner.png"
-                alt="Orange faction banner with a picture of the sun">
+                <img class="card-img-top" src="kuvat/faction_banner.png"
+                  alt="Orange faction banner with a picture of the sun">
               </picture>
               <div class="card-body">
                 <h3 class="card-title">Choose your faction</h3>
@@ -73,7 +75,7 @@
             <div class="card h-100">
               <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
                 <source srcset="kuvat/ingame_flower.webp" type="image/webp">
-              <img class="card-img-top" src="kuvat/ingame_flower.png" alt="Yellow and glowing ingame flower">
+                <img class="card-img-top" src="kuvat/ingame_flower.png" alt="Yellow and glowing ingame flower">
               </picture>
               <div class="card-body">
                 <h3 class="card-title">Explore, build and collect</h3>
@@ -85,7 +87,8 @@
             <div class="card h-100">
               <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
                 <source srcset="kuvat/crossing_swords.webp" type="image/webp">
-              <img class="card-img-top" src="kuvat/crossing_swords.png" alt="Two swords crossing on a black background">
+                <img class="card-img-top" src="kuvat/crossing_swords.png"
+                  alt="Two swords crossing on a black background">
               </picture>
               <div class="card-body">
                 <h3 class="card-title">Win battles to become stronger</h3>
@@ -97,8 +100,8 @@
             <div class="card h-100">
               <picture> <!--Asetetaan kuva ja sen eri tiedostomuodot tähän-->
                 <source srcset="kuvat/gameart_fightscene.webp" type="image/webp">
-              <img class="card-img-top" src="kuvat/gameart_fightscene.png"
-                alt="Fight scene with two player characters crossing swords">
+                <img class="card-img-top" src="kuvat/gameart_fightscene.png"
+                  alt="Fight scene with two player characters crossing swords">
               </picture>
               <div class="card-body">
                 <h3 class="card-title">Play the game with friends</h3>
@@ -112,13 +115,15 @@
 
     <section class="mb-5">
       <div class="container custom-container">
-        <h2 class="text-center mb-4">Questions and answers</h2><hr>
+        <h2 class="text-center mb-4">Questions and answers</h2>
+        <hr>
         <!--Tässä on haitari neljällä osiolla.-->
         <div class="accordion" id="accordionExample">
           <div class="accordion-item">
             <h3 class="accordion-header" id="headingOne">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne"> <!--aria-expanded määrittää, onko haitarin osa auki vai kiinni oletuksena.-->
+                aria-expanded="true" aria-controls="collapseOne">
+                <!--aria-expanded määrittää, onko haitarin osa auki vai kiinni oletuksena.-->
                 What are factions?
               </button>
             </h3>
@@ -180,7 +185,7 @@
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
               data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <p >Victory comes from strategy—not just strength.</p>
+                <p>Victory comes from strategy—not just strength.</p>
                 <ul>
                   <li>Choose the right heroes for each battle</li>
                   <li>Counter enemy tactics—steel can overpower fragile mages, while magic can devastate heavily armored
@@ -188,7 +193,7 @@
                   <li>Position wisely, using terrain and formations to your advantage</li>
                   <li>Upgrade abilities to unlock devastating attacks and passive bonuses</li>
                 </ul>
-                <p >Whether you’re clashing blades up close or raining destruction from afar,
+                <p>Whether you’re clashing blades up close or raining destruction from afar,
                   understanding the balance between swords, magic, and tactics is the key to domination.</p>
               </div>
             </div>
@@ -203,7 +208,8 @@
             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
               data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <p>Crown of Conquest can be played on mobile and tablet, and requires a minimum of 20GB storage space.</p>
+                <p>Crown of Conquest can be played on mobile and tablet, and requires a minimum of 20GB storage space.
+                </p>
                 <p class="border-start border-warning border-5 px-2">Coming to PC in late 2026!</p>
               </div>
             </div>
@@ -214,4 +220,5 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
