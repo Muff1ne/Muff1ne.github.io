@@ -16,7 +16,8 @@ h1 {
 }
 
 #toteutusimg {
-    width: 100%;
+    width: 80%;
+    border-radius: 2rem;
 }
 
 #saainfo {
