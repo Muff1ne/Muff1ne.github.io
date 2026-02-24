@@ -51,6 +51,7 @@
       .then(function (response) {
         return response.json();
       })
+      //Siirretään data funktiolle kerro
       .then(function (responseJson) {
         kerro(responseJson);
       })
@@ -59,22 +60,23 @@
         document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; //Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla
       })
 
-    function kerro(obj) { //obj=responseJson
+    function kerro(obj) {
 
       //let tiedot määrittää, mitä "tiedot" sisältää
       let tiedot = "<h1>" + obj.nimi + "</h1><br>"
-      + "<p>Osallistujat: " + obj.osallistujat + "kpl</p>"
-      + "Osallistujien nimet:<br>";
+        + "<p>Osallistujat: " + obj.osallistujat + "kpl</p>"
+        + "Osallistujien nimet:<br>";
 
-//Taulukon nimet listataan tiedot muuttujaan, for silmukka käy taulukon läpi vaihe kerrallaan
-      for (let i=0; i<obj.nimet.length;i++) {
-        tiedot += obj.nimet[i] + "</br>"; 
+      //Taulukon nimet listataan tiedot muuttujaan, for silmukka käy taulukon läpi vaihe kerrallaan
+      for (let i = 0; i < obj.nimet.length; i++) {
+        tiedot += obj.nimet[i] + "</br>";
       }
 
-      tiedot += "<br><p>Kurssi alkaa: " + obj.alku + " ja loppuu " + obj.loppu + ", eli se kestää " + obj.kesto + ".</p>";
+      tiedot += "<br><p>Kurssin kesto: " + obj.alku + " - " + obj.loppu + ", eli se kestää " + obj.kesto + ".</p>";
       tiedot += "<p><img src='" + obj.kuva + "' id= 'toteutusimg'><p>";
 
-      document.getElementById("vastaus").innerHTML = tiedot; //Näyttää tiedot divissä, jonka id=vastaus
+      //Näyttää tiedot divissä, jonka id=vastaus
+      document.getElementById("vastaus").innerHTML = tiedot; 
     }
 
   </script>

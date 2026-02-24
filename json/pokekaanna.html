@@ -61,10 +61,10 @@
     let name = ""; //Määritetään pokemonin nimi globaaliksi muuttujaksi, tällä hetkellä tyhjä.
 
     function poke() {
-      const pokeName = document.getElementById("pokemonName").value.toLowerCase();
+      const pokeName = document.getElementById("pokemonName").value.toLowerCase(); //Hakukenttään kirjoitettu pokenimi käännetään pieniksi kirjaimiksi.
 
       //Haetaan poketiedot, siirretään ne seuraavaksi suoritettavalle funktiolle pokekuva ja määritetään virhetilanteen viesti
-      fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
+      fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`) //Käytetään aiemmin määritettyä muuttujaa pokeName, haetaan vastaavaa tietoa Poke APIsta.
         .then(function (response) {
           return response.json();
         })
