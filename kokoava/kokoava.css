@@ -65,6 +65,7 @@ h1 {
 
 h1 {
     font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 2rem;
 }
 
 
@@ -95,9 +96,20 @@ h1 {
     width: 100%;
 }
 
+.nav-pills .nav-link {
+    background-color: rgb(243, 188, 49);
+    color: rgb(85, 37, 19);
+    margin-bottom: 1rem;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: rgb(182, 141, 38);
+}
+
 @media (min-width: 768px) {
     h1 {
         text-align: center;
+        margin-bottom: 4rem;
     }
 
     h3 {
