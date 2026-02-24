@@ -1,8 +1,7 @@
-
 body {
-    background: linear-gradient(to bottom, rgb(243, 188, 49), rgb(255, 255, 255));
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: linear-gradient(to bottom, rgb(243, 188, 49), rgb(255, 255, 255)); /*Sivuston taustaväriksi gradientti.*/
+    background-repeat: no-repeat; /*Gradientti esiintyy vain kerran eikä toistu.*/
+    background-attachment: fixed; /*Gradientti pysyy paikallaan eikä liiku sivun sisällön mukana.*/
     color: rgb(63, 32, 15);
 }
 
@@ -21,12 +20,16 @@ body {
 }
 
 section {
-    padding: 2rem;
+    padding: 1rem;
 }
 
+footer {
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
 
-
-a.btn, .btn {
+a.btn,
+.btn {
     background-color: rgb(255, 226, 110);
     border-color: rgb(255, 226, 110);
     margin: 0.5rem;
@@ -37,6 +40,7 @@ a.btn, .btn {
 .btn {
     background-color: rgb(235, 191, 15);
     border-color: rgb(235, 191, 15);
+   
 }
 
 .navbar .btn:active,
@@ -54,26 +58,31 @@ a.btn, .btn {
 }
 
 
-h2, h1 {
+h2,
+h1 {
     font-family: 'Pacifico';
 }
 
 h1 {
     font-size: clamp(2rem, 6vw, 3rem);
-    text-align: center;
 }
 
+
 .img-container {
-    position: relative;
+    position: relative; /**/
+    /*Asetetaan kuvan diville korkeus/leveys ja niiden maksimit.*/
     width: 80vw;
     max-width: 650px;
+    height: 80vw;
+    max-height: 650px;
     margin: auto;
 }
 
 .img-container img {
     width: 100%;
     display: block;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 2rem;
 }
 
@@ -82,12 +91,26 @@ h1 {
     bottom: 10px;
 }
 
-#ruudukko {
- max-width: 650px;
- margin: auto;
+#bannerimg {
+    width: 100%;
 }
 
-#resepti, #ohjeistus {
-padding-left: 4rem;
-}
+@media (min-width: 768px) {
+    h1 {
+        text-align: center;
+    }
 
+    h3 {
+        text-align: center;
+    }
+
+    #resepti,
+    #ohjeistus {
+        padding-left: 4rem;
+    }
+
+    #ruudukko {
+        max-width: 650px;
+        margin: auto;
+    }
+}
