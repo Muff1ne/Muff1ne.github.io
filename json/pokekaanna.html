@@ -75,9 +75,9 @@
           document.getElementById("pokenkuva").innerHTML = "<p>Tietoa ei pysty näyttämään</p>";
         })
 
-        document.getElementById("pokeinfo").innerHTML = ""; //Tyhjentää käännä-painikkeen näyttämät tiedot kun tehdään uusi haku
-        document.getElementById("kaannetty").innerHTML = ""; //Piilottaa myös painikkeen virhetilanteessa
-        document.getElementById("nimi").innerHTML = ""; //Piilottaa pokemonin nimen virhetilanteessa
+      document.getElementById("pokeinfo").innerHTML = ""; //Tyhjentää käännä-painikkeen näyttämät tiedot kun tehdään uusi haku
+      document.getElementById("kaannetty").innerHTML = ""; //Piilottaa myös painikkeen virhetilanteessa
+      document.getElementById("nimi").innerHTML = ""; //Piilottaa pokemonin nimen virhetilanteessa
     }
 
     function pokekuva(vast) {
@@ -96,21 +96,19 @@
       let tiedot = ""; //Määritetään merkkijono alempana käytettävää for-loopia varten.
       let muoto = "";
 
-      document.getElementById("nimi").innerHTML = "<b>" + name + "</b>";
+      document.getElementById("nimi").innerHTML = "<b>" + name + "</b>"; //Näytetään sivulla haetun Pokemonin nimi
       document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeselka + "'>"; //Korvataan pokekuva käännetyllä pokemonin kuvalla
-      
 
-
-      //For loop listaa APIn objektitaulukoiden osat ja tallentaa ne valittuihin merkkijonoihin.
+      //For loop listaa APIn objektitaulukoiden osat ja tallentaa ne valittuihin merkkijonoihin. 
       for (let i = 0; i < poketiedot.abilities.length; i++) {
-        tiedot += poketiedot.abilities[i].ability.name + "<br>";
+        tiedot += poketiedot.abilities[i].ability.name + "<br>"; // Listataan pokemonien taidot
       }
 
       for (let j = 0; j < poketiedot.forms.length; j++) {
-        muoto += poketiedot.forms[j].name + "<br>";
+        muoto += poketiedot.forms[j].name + "<br>"; //Listataan pokemonin eri muodot
       }
 
-      //Näytetään pokemonien tiedot sivustolla
+      //Näytetään pokemonin exp ja for loopeilla listatut pokemonien tiedot sivustolla
       document.getElementById("pokeinfo").innerHTML = "<b>Exp:</b> " + poketiedot.base_experience
         + " <br><b>Taidot:</b><br>" + tiedot
         + "<b>Muodot:</b><br>" + muoto;
