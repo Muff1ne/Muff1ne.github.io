@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JSON</title>
+  <!--Linkki bootstrapiin ja omaan CSS:ään-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -14,6 +15,7 @@
 </head>
 
 <body>
+  <!--Bootstrapin responsiivinen navigaatiopalkki-->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">JSON</a>
@@ -39,9 +41,11 @@
       </div>
     </div>
   </nav>
+
   <main>
     <div id="vastaus"></div> <!--Tähän diviin ilmestyvät kaikki haetut JSON tiedot.-->
   </main>
+  
   <script>
     fetch('../jsontietue/tietue.json') //Hakee json tietueen eri kansiosta
       .then(function (response) {
@@ -65,6 +69,7 @@
         + "Opintopisteet: " + obj.opintojakso.opintopisteet + "<br></center>";
 
       tiedot += "<h3>Aiheet</h3>"; //Lisätään aiempiin tietoihin asiaa += merkein
+
       //for silmukka tekniikkojen listaamiseen
       for (let i = 0; i < obj.tekniikat.length; i++) {
         tiedot += "<b>Aihe: " + obj.tekniikat[i].aihe + "</b>";

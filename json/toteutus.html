@@ -39,8 +39,9 @@
       </div>
     </div>
   </nav>
+
   <main>
-    <div id="vastaus" style="text-align: center;"></div>
+    <div id="vastaus" style="text-align: center;"></div> <!--Täällä näkyvät tiedot-->
   </main>
 
   <script>
@@ -69,6 +70,7 @@
         tiedot += obj.nimet[i] + "</br>";
       }
 
+      //Lisätään kurssin päivämäärät ja kuva
       tiedot += "<br><p>Kurssin kesto: " + obj.alku + " - " + obj.loppu + ", eli se kestää " + obj.kesto + ".</p>";
       tiedot += "<p><img src='" + obj.kuva + "' id= 'toteutusimg'><p>";
 
