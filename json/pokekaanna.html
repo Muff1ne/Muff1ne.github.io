@@ -30,10 +30,7 @@
             <a class="nav-link" href="toteutus.html">Tehtävä 1 osa 2</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pokehaku.html">Tehtävä 2 osa 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="pokekaanna.html">Tehtävä 2 osa 2</a>
+            <a class="nav-link active" aria-current="page" href="pokekaanna.html">Tehtävä 2</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="saa.html">Tehtävä 3</a>
@@ -42,23 +39,24 @@
       </div>
     </div>
   </nav>
+
   <main>
     <h1>Pokehaku</h1>
     <div style="text-align: center;">
+      <!--Tässä hakukenttä ja sen alla painike, jolla haetaan tietoa.-->
       <input class="mt-5" type="text" id="pokemonName" placeholder="Enter Pokemon name">
       <button onclick="poke()" style="color: rgba(165, 10, 5, 0.817);">Hae</button>
+      <!--Tänne tulee näkyviin pokenimi, pokekuva ja muut tiedot-->
       <p id="nimi" class="mt-4">Kirjoita laatikkoon Pokemonin nimi</p>
       <div id="pokenkuva"></div>
-      <!--Tänne tulee näkyviin käännetty pokekuva ja muut tiedot-->
-      <div id="kaannetty"></div>
+      <div id="kaannetty"></div> <!--Tähän ilmestyy "Käännä" -painike-->
       <p id="pokeinfo"></p>
     </div>
-
   </main>
 
   <script>
-    let poketiedot = null; //Määritetään poketiedot globaaliksi muuttujaksi, tällä hetkellä muuttuja on tyhjä.
-    let name = ""; //Määritetään pokemonin nimi globaaliksi muuttujaksi, tällä hetkellä tyhjä.
+    let poketiedot = null; //Määritetään poketiedot globaaliksi muuttujaksi, tällä hetkellä muuttujalla ei arvoa.
+    let name = ""; //Määritetään pokemonin nimi globaaliksi muuttujaksi, tällä hetkellä tyhjä merkkijono.
 
     function poke() {
       const pokeName = document.getElementById("pokemonName").value.toLowerCase(); //Hakukenttään kirjoitettu pokenimi käännetään pieniksi kirjaimiksi.
@@ -86,32 +84,32 @@
       name = document.getElementById("pokemonName").value; //Lisätään hakukenttään kirjoitettu nimi nimi-muuttujaan.
 
       document.getElementById("nimi").innerHTML = "<b>" + name + "</b>"; //Näytetään hakukenttään kirjoitettu nimi sivulla.
-      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeurl + "'>"; //Näytetään sivustolla pokemonin kuva.
+      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeurl + "' alt='pokemon image'>"; //Näytetään sivustolla pokemonin kuva.
       document.getElementById("pokemonName").value = ""; //Tyhjentää hakukentän.
-      document.getElementById("kaannetty").innerHTML = `<button onclick="kaanna()">Käännä</button>`; //Näytetään käännä-painike
+      document.getElementById("kaannetty").innerHTML = `<button onclick="kaanna()">Käännä</button>`; //Laitetaan diviin painike "Käännä", joka ilmestyy poketietoa hakiessa. Painiketta painaessa tehdään funktio kaanna().
     }
 
     function kaanna() {
       let pokeselka = poketiedot.sprites.back_default; //Aiemmin poketietoihin on tallennettu kaikki APIsta haettu tieto, tässä niistä tiedoista haetaan kuva
       let tiedot = ""; //Määritetään merkkijono alempana käytettävää for-loopia varten.
-      let muoto = "";
+      let tyyppi = "";
 
       document.getElementById("nimi").innerHTML = "<b>" + name + "</b>"; //Näytetään sivulla haetun Pokemonin nimi
-      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeselka + "'>"; //Korvataan pokekuva käännetyllä pokemonin kuvalla
+      document.getElementById("pokenkuva").innerHTML = "<img src='" + pokeselka + "' alt='Pokemon back image'>"; //Korvataan pokekuva käännetyllä pokemonin kuvalla
 
       //For loop listaa APIn objektitaulukoiden osat ja tallentaa ne valittuihin merkkijonoihin. 
       for (let i = 0; i < poketiedot.abilities.length; i++) {
         tiedot += poketiedot.abilities[i].ability.name + "<br>"; // Listataan pokemonien taidot
       }
 
-      for (let j = 0; j < poketiedot.forms.length; j++) {
-        muoto += poketiedot.forms[j].name + "<br>"; //Listataan pokemonin eri muodot
+      for (let k = 0; k < poketiedot.types.length; k++) {
+        tyyppi += poketiedot.types[k].type.name + "<br>"; //Listataan pokemonin eri tyypit
       }
 
       //Näytetään pokemonin exp ja for loopeilla listatut pokemonien tiedot sivustolla
       document.getElementById("pokeinfo").innerHTML = "<b>Exp:</b> " + poketiedot.base_experience
         + " <br><b>Taidot:</b><br>" + tiedot
-        + "<b>Muodot:</b><br>" + muoto;
+        + "<b>Tyypit:</b><br>" + tyyppi;
     }
   </script>
 </body>

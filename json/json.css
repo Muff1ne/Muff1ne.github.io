@@ -2,6 +2,7 @@
 /*Kaikella bodyn sisällä on reunoihin väliä*/
 body {
     padding: 2rem;
+    background-color: rgb(227, 227, 227);
 }
 
 /*Otsikkotekstin siirto keskelle ja väliä navigaatioon*/

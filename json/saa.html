@@ -1,76 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JSON</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="json.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="json.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">JSON</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Tehtävä 1 osa 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="toteutus.html">Tehtävä 1 osa 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pokehaku.html">Tehtävä 2 osa 1</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="pokekaanna.html">Tehtävä 2 osa 2</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="saa.html">Tehtävä 3</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <main>
-        <h1 class="mt-5">Sää Helsingissä</h1>
-        <div id="saainfo" class="text-center mt-4"></div>
-      </main>
-      <script> 
-     
-        fetch(`https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric`)
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (responseJson) {
-            saa(responseJson);
-          })
-          .catch(function(error) {
-            document.getElementById("saainfo").innerHTML = "<p>Tietoa ei pysty näyttämään</p>";
-          })
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">JSON</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Tehtävä 1 osa 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="toteutus.html">Tehtävä 1 osa 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="pokekaanna.html">Tehtävä 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="saa.html">Tehtävä 3</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <h1 class="mt-5">Sää Helsingissä</h1>
+    <div id="saainfo" class="text-center mt-4"></div>
+  </main>
+  <script>
 
-          function saa(data) {
-            let kuvaus = data.weather[0].description;
-            let lampotila = data.main.temp;
-            let tuuli = data.wind.speed;
-            let kuva = data.weather[0].icon; //laitetaan muuttujaan kuva sään ikoni
-            let pvm = new Date();
-            let tunnit = pvm.getHours(); //Tämänhetkiset tunnit esitetään muuttujassa tunnit
-            let minuutit = pvm.getMinutes();
+    fetch(`https://api.openweathermap.org/data/2.5/weather?id=658225&appid=665ecd56dfc08dbb50feb8b8f5034e28&lang=fi&units=metric`)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (responseJson) {
+        saa(responseJson);
+      })
+      .catch(function (error) {
+        document.getElementById("saainfo").innerHTML = "<p>Tietoa ei pysty näyttämään</p>";
+      })
 
-            document.getElementById("saainfo").innerHTML = "<b>Sää:</b><br>" + kuvaus + "<br><b>Lämpötila:</b><br>"
-            + lampotila + " °C<br><b>Tuuli:</b><br>"
-            + tuuli + " m/s<br>"
-            + `<img src="https://openweathermap.org/img/wn/${kuva}.png">` 
-            + "<br>Sää kello " + tunnit + ":" + minuutit;
-            
-            //Näytetään kuva-muuttuja sivulla
-          }
+    function saa(data) {
+      let kuvaus = data.weather[0].description;
+      let lampotila = data.main.temp;
+      let tuuli = data.wind.speed;
+      let kuva = data.weather[0].icon; //laitetaan muuttujaan kuva sään ikoni
+      let pvm = new Date();
+      let tunnit = pvm.getHours(); //Tämänhetkiset tunnit esitetään muuttujassa tunnit
+      let minuutit = pvm.getMinutes();
 
-      </script>
+      document.getElementById("saainfo").innerHTML = "<b>Sää:</b><br>" + kuvaus + "<br><b>Lämpötila:</b><br>"
+        + lampotila + " °C<br><b>Tuuli:</b><br>"
+        + tuuli + " m/s<br>"
+        + `<img src="https://openweathermap.org/img/wn/${kuva}.png">`
+        + "<br>Sää kello " + tunnit + ":" + minuutit;
+
+      //Näytetään kuva-muuttuja sivulla
+    }
+
+  </script>
 </body>
+
 </html>
