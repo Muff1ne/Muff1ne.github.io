@@ -1,128 +1,133 @@
 body {
-    background: linear-gradient(to bottom, rgb(243, 188, 49), rgb(255, 255, 255)); /*Sivuston taustaväriksi gradientti.*/
-    background-repeat: no-repeat; /*Gradientti esiintyy vain kerran eikä toistu.*/
-    background-attachment: fixed; /*Gradientti pysyy paikallaan eikä liiku sivun sisällön mukana.*/
-    color: rgb(63, 32, 15);
+  background: linear-gradient(to bottom, rgb(243, 188, 49), rgb(255, 255, 255));
+  /*Sivuston taustaväriksi gradientti.*/
+  background-repeat: no-repeat;
+  /*Gradientti esiintyy vain kerran eikä toistu.*/
+  background-attachment: fixed;
+  /*Gradientti pysyy paikallaan eikä liiku sivun sisällön mukana.*/
+  color: rgb(63, 32, 15);
 }
 
 .navbar {
-    background-color: rgb(243, 188, 49);
+  background-color: rgb(243, 188, 49);
 }
 
-
 .navbar-brand {
-    font-family: 'Cookie';
-    font-size: clamp(2.25rem, 6vw, 2.75rem);
+  font-family: "Cookie";
+  font-size: clamp(2.25rem, 6vw, 2.75rem);
 }
 
 #logo {
-    width: clamp(2.5rem, 7vw, 3.5rem);
+  width: clamp(2.5rem, 7vw, 3.5rem);
 }
 
 section {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 footer {
-    border-top-right-radius: 2rem;
-    border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+
+em {
+  color: rgb(55, 122, 58);
 }
 
 a.btn,
 .btn {
-    background-color: rgb(255, 226, 110);
-    border-color: rgb(255, 226, 110);
-    margin: 0.5rem;
-    font-weight: 600;
-    color: rgb(85, 37, 19);
+  background-color: rgb(255, 226, 110);
+  border-color: rgb(255, 226, 110);
+  margin: 0.5rem;
+  font-weight: 600;
+  color: rgb(85, 37, 19);
 }
 
 .btn {
-    background-color: rgb(235, 191, 15);
-    border-color: rgb(235, 191, 15);
-   
+  background-color: rgb(235, 191, 15);
+  border-color: rgb(235, 191, 15);
 }
 
 .navbar .btn:active,
 .navbar .btn.active,
 #find_button:active {
-    background-color: rgb(100, 148, 23);
-    border-color: rgb(100, 148, 23);
-    color: white;
+  background-color: rgb(100, 148, 23);
+  border-color: rgb(100, 148, 23);
+  color: white;
 }
 
 .btn:hover {
-    background-color: rgb(182, 141, 38);
-    border-color: rgb(182, 141, 38);
-    color: rgb(255, 255, 255);
+  background-color: rgb(182, 141, 38);
+  border-color: rgb(182, 141, 38);
+  color: rgb(255, 255, 255);
 }
-
 
 h2,
 h1 {
-    font-family: 'Pacifico';
+  font-family: "Pacifico";
 }
 
 h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
-    margin-bottom: 2rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 2rem;
 }
 
-
 .img-container {
-    position: relative; /**/
-    /*Asetetaan kuvan diville korkeus/leveys ja niiden maksimit.*/
-    width: 80vw;
-    max-width: 650px;
-    height: 80vw;
-    max-height: 650px;
-    margin: auto;
+  position: relative; /*Mahdollistaa absoluuttisten elementtien sijoittelun tämän divin sisällä.*/
+  /*Asetetaan kuvan diville korkeus/leveys ja niiden maksimit samaksi, jotta kuva pysyisi neliömäisenä.*/
+  width: 80vw;
+  max-width: 650px;
+  height: 80vw;
+  max-height: 650px;
+  margin: auto; /*Keskitetään divi.*/
 }
 
 .img-container img {
-    width: 100%;
-    display: block;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 2rem;
+  width: 100%; /*Kuva täyttää koko div-elementin leveydeltään.*/
+  display: block;
+  height: 100%;
+  object-fit: cover; /*Varmistetaan, että kuva täyttää div-elementin jossa se sijaitsee ilman, että kuvasuhde vääristyy.*/
+  border-radius: 2rem;
 }
 
 .img-container #find_button {
-    position: absolute;
-    bottom: 10px;
+  position: absolute;
+  /*Painike sijoittuu suhteessa lähimpään suhteelliseen vanhempaan.*/
+  bottom: 10px;
+  /*Painikkeen sijainti on 10px alareunasta.*/
 }
 
 #bannerimg {
-    width: 100%;
+  width: 100%;
 }
 
 .nav-pills .nav-link {
-    background-color: rgb(243, 188, 49);
-    color: rgb(85, 37, 19);
-    margin-bottom: 1rem;
+  background-color: rgb(243, 188, 49);
+  color: rgb(85, 37, 19);
+  margin-bottom: 1rem;
 }
 
 .nav-pills .nav-link:hover {
-    background-color: rgb(182, 141, 38);
+  background-color: rgb(182, 141, 38);
 }
 
 @media (min-width: 768px) {
-    h1 {
-        text-align: center;
-        margin-bottom: 4rem;
-    }
+  h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
 
-    h3 {
-        text-align: center;
-    }
+  h3 {
+    text-align: center;
+  }
 
-    #resepti,
-    #ohjeistus {
-        padding-left: 4rem;
-    }
+  #resepti,
+  #ohjeistus {
+    padding-left: 4rem;
+  }
 
-    #ruudukko {
-        max-width: 650px;
-        margin: auto;
-    }
+  #ruudukko {
+    max-width: 650px;
+    margin: auto;
+  }
 }
