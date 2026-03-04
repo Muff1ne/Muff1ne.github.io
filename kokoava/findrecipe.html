@@ -63,10 +63,12 @@
                 </div>
 
                 <!--Tänne tulee reseptinimien listat painikkeita painessa-->
-                <p id="lista" class="text-center my-5">Find recipes by meal type. Click recipe names to get
+                <p class="text-center mt-4">Find recipes by meal type. Click recipe names to get
                     instructions!
                 </p>
+                <div id="lista" class="text-center"></div>
 
+                <!--Tänne tulee reseptinimiä painaessa ohjeet ruoan laittoon.-->
                 <div id="ruudukko">
                     <div class="row">
                         <div class="col-md mb-4" id="ainekset"></div>
@@ -106,9 +108,9 @@
         function vast(vast) {
             let nimilista = "";
             for (i = 0; i < vast.recipes.length; i++) { //For loopilla käydään läpi haetun tyypin reseptit.
-                nimilista += "<li onclick='nayta(" + vast.recipes[i].id + ")'>" + vast.recipes[i].name + "</li>"; //Näytetään haetut reseptit listana.
+                nimilista += "<li class='lista-reseptit' onclick='nayta(" + vast.recipes[i].id + ")'>" + vast.recipes[i].name + "</li>"; //Näytetään haetut reseptit listana.
             }
-            document.getElementById("lista").innerHTML = "<ul class='list-unstyled'>" + nimilista + "</ul>";
+            document.getElementById("lista").innerHTML = "<br><ul class='list-unstyled'>" + nimilista + "</ul>";
         }
 
         function nayta(reseptiikka) {

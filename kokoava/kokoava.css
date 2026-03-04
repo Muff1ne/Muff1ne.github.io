@@ -62,8 +62,11 @@ a.btn,
   color: rgb(255, 255, 255);
 }
 
-h1 {
+h1, #resepti-nimi {
   font-family: "Pacifico";
+}
+
+h1 {
   font-size: clamp(2rem, 6vw, 3rem);
   margin-bottom: 2rem;
 }
@@ -91,6 +94,19 @@ h1 {
   /*Painike sijoittuu suhteessa lähimpään suhteelliseen vanhempaan.*/
   bottom: 10px;
   /*Painikkeen sijainti on 10px alareunasta.*/
+}
+
+#ruudukko {
+  margin: 0.5rem;
+}
+
+.lista-reseptit {
+  cursor: pointer; /*Selvennetään, että listan reseptit on klikattavia.*/
+  margin: 0.5rem;
+}
+
+.lista-reseptit:hover {
+  color: rgb(182, 141, 38);
 }
 
 #bannerimg {

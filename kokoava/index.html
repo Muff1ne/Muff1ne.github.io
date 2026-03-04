@@ -51,12 +51,12 @@
       <div class="container mt-5">
         <h1>What to <em>cook?</em></h1>
         <div class="row">
-          <div class="col-sm-6 mb-4">
+          <div class="col-md-6 mb-4">
             <h2 class="h5">Out of ideas?</h2>
             <p>Here you can find random recipes and new ideas for cooking with just one click.</p>
 
           </div>
-          <div class="col-sm-6 mb-4">
+          <div class="col-md-6 mb-4">
             <h2 class="h5">Random recipes...</h2>
             <p>...with cooking times and full instructions just for you! Try it out now by pressing "Find recipe!"
               below.
@@ -120,10 +120,10 @@
 
       document.getElementById("ruokakuva").src = valinta.image; // Vaihdetaan sivuston peruskuva haettuun reseptin kuvatietoon.
       //Listataan randomin reseptin tiedot sivulle.
-      document.getElementById("nimi").innerHTML = "<h2>" + valinta.name + "</h2>";
+      document.getElementById("nimi").innerHTML = "<h2 id='resepti-nimi'>" + valinta.name + "</h2>";
       document.getElementById("info").innerHTML = "<b>Prep time:</b> " + valinta.prepTimeMinutes + " minutes<br><b>Cooking time:</b> " + valinta.cookTimeMinutes + " minutes<br><b>Servings:</b> " + valinta.servings;
       document.getElementById("resepti").innerHTML = "<br><b>Ingredients:</b><br>" + ainesosat;
-      document.getElementById("ohjeistus").innerHTML = "</h2><br><b>Instructions:</b><br>" + ohjeet;
+      document.getElementById("ohjeistus").innerHTML = "<br><b>Instructions:</b><br>" + ohjeet;
     }
   </script>
   <!--Bootstrapin js-->
