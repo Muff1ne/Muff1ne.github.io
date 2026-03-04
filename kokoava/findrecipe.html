@@ -5,6 +5,7 @@
     <title>Delish! - Cooking inspiration</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Discover delicious recipes by meal type. Get step-by-step instructions for the recipe you want.">
     <!--Google fontti-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,14 +108,16 @@
 
         function vast(vast) {
             let nimilista = "";
+
             for (i = 0; i < vast.recipes.length; i++) { //For loopilla käydään läpi haetun tyypin reseptit.
-                nimilista += "<li class='lista-reseptit' onclick='nayta(" + vast.recipes[i].id + ")'>" + vast.recipes[i].name + "</li>"; //Näytetään haetut reseptit listana.
+                nimilista += "<li class='lista-reseptit' onclick='nayta(" + vast.recipes[i].id + ")'>" + vast.recipes[i].name + "</li>"; //Näytetään haetut reseptit listana. Klikkaamalla aloitetaan nayta() -funktio, jolle lähetetään parametrina klikatun reseptin id.
             }
-            document.getElementById("lista").innerHTML = "<ul class='list-unstyled'>" + nimilista + "</ul>";
+
+            document.getElementById("lista").innerHTML = "<ul class='list-unstyled'>" + nimilista + "</ul>"; //Näytetään reseptilista sivulla, poistetaan listan oletus-tyyli.
         }
 
         function nayta(reseptiikka) {
-            fetch(`https://dummyjson.com/recipes/${reseptiikka}`)
+            fetch(`https://dummyjson.com/recipes/${reseptiikka}`) //Haetaan reseptiä sillä id:llä, joka saatiin parametrina reseptiä klikatessa.
                 .then(function (response) {
                     return response.json();
                 })
@@ -131,13 +134,13 @@
             let ohjeet = "";
 
             for (let i = 0; i < reseptit.ingredients.length; i++) {
-                ainesosat += reseptit.ingredients[i] + "<br>"; //Randomisti valitun reseptin reseptiikka listataan tässä kohta kerrallaan.
+                ainesosat += reseptit.ingredients[i] + "<br>"; //Valitun reseptin reseptiikka listataan tässä kohta kerrallaan.
             }
 
             for (let j = 1; j < reseptit.instructions.length; j++) {
                 ohjeet += j + ". " + reseptit.instructions[j] + "<br>"; //Listataan myös ohjeet reseptin valmistukseen samalla tavoin.
             }
-            document.getElementById("resepti").innerHTML = "<b>Instructions:</b><br>" + ohjeet + "<br><b>Ingredients:</b><br>" + ainesosat;
+            document.getElementById("resepti").innerHTML = "<b>Instructions:</b><br>" + ohjeet + "<br><b>Ingredients:</b><br>" + ainesosat; //Näytetään haetut tiedot sivulla.
         }
 
 
