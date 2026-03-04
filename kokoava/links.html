@@ -46,14 +46,13 @@
 
   <img src="kuvat/herobanner.webp" alt="table full of food" id="bannerimg"> <!--Tässä on sivuston bannerikuva-->
 
-  <section>
+  <main>
     <div class="container mt-5">
-      <!--Bootstrapin ruudukko, rivi kahdella eri kokoisella sarakkeella-->
+      <!--Bootstrapin ruudukko, rivi kahdella eri levyisellä sarakkeella-->
       <div class="row">
         <div class="col-md-4">
-          <h1 class="h2 mb-4 text-start">No luck?</h1>
-          <!--Pidetään otsikoiden järjestys mutta muutetaan niiden ulkoasua.-->
-          <h2 class="h5">Didn't find what you need?</h2>
+          <h1 class="mb-4 text-start">No luck?</h1>
+          <h2 class="h5">Didn't find what you need?</h2> <!--Pidetään otsikoiden järjestys mutta muutetaan niiden ulkoasua luokkaa muuttamalla.-->
           <p>No problem! Here are some suggestions for our favorite websites where you can search for specific recipes.
           </p>
           <h2 class="h5 mt-4">Links to recipes</h2>
@@ -77,14 +76,10 @@
         </div>
 
         <div class="col-md-8">
-          <img 
-          src="kuvat/happypot_400.webp"
-          alt="A winking cooking pot" 
-          class="img-fluid">
+          <img src="kuvat/happypot.webp" alt="A winking cooking pot" class="img-fluid" id="img-pot">
         </div>
       </div>
-
-  </section>
+    </main>
 
   <!--Lisätään alatunniste, jossa Bootstrapin svg-kuva linkkinä omaan Githubiin ja tekijänoikeudet. -->
   <footer class="mt-5 p-4 bg-dark text-white text-center">
@@ -94,6 +89,7 @@
     <p class="mt-4">images @ Wikipedia Commons & in good taste</p>
   </footer>
 
+  <!--Linkataan Bootstrapin js-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>

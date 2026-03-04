@@ -8,6 +8,15 @@ body {
   color: rgb(63, 32, 15);
 }
 
+main {
+  padding: 1rem;
+}
+
+footer {
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
+}
+
 .navbar {
   background-color: rgb(243, 188, 49);
 }
@@ -19,15 +28,6 @@ body {
 
 #logo {
   width: clamp(2.5rem, 7vw, 3.25rem);
-}
-
-section {
-  padding: 1rem;
-}
-
-footer {
-  border-top-right-radius: 2rem;
-  border-top-left-radius: 2rem;
 }
 
 em {
@@ -96,13 +96,17 @@ h1 {
   /*Painikkeen sijainti on 10px alareunasta.*/
 }
 
+#img-pot {
+  border-radius: 1rem;
+}
+
 #ruudukko {
   margin: 0.5rem;
 }
 
 .lista-reseptit {
   cursor: pointer; /*Selvennetään, että listan reseptit on klikattavia.*/
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
   padding: 0.5rem;
 }
 
@@ -140,7 +144,7 @@ h1 {
   }
 
   #ruudukko {
-    max-width: 650px;
+    max-width: 700px;
     margin: auto;
   }
 }

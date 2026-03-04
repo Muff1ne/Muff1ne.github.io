@@ -51,32 +51,29 @@
 
     <!--Tähän tulee sivuston pääsisältö-->
     <main>
-        <section>
-            <div class="container mt-5">
-                <h1 class="text-center">Search for <em>recipes</em></h1>
-                <!--Painikkeet eri reseptityypeille.-->
-                <div class="text-center">
-                    <button class="btn" onclick="hae(this)" id="breakfast">Breakfast</button> <!--Kerrotaan funktiolle, mitä painiketta on painettu ja nämä tiedot lähtee funktiolle.-->
-                    <button class="btn" onclick="hae(this)" id="lunch">Lunch</button>
-                    <button class="btn" onclick="hae(this)" id="dinner">Dinner</button>
-                    <button class="btn" onclick="hae(this)" id="snack">Snack</button>
-                </div>
+        <div class="container mt-5">
+            <h1 class="text-center">Search for <em>recipes</em></h1>
+            <!--Painikkeet eri reseptityypeille.-->
+            <div class="text-center">
+                <button class="btn" onclick="hae(this)" id="breakfast">Breakfast</button>
+                <!--Kerrotaan funktiolle, mitä painiketta on painettu ja nämä tiedot lähtee funktiolle.-->
+                <button class="btn" onclick="hae(this)" id="lunch">Lunch</button>
+                <button class="btn" onclick="hae(this)" id="dinner">Dinner</button>
+                <button class="btn" onclick="hae(this)" id="snack">Snack</button>
             </div>
+        </div>
 
-                <!--Tänne tulee reseptinimien listat painikkeita painessa-->
-                <p class="text-center mt-4">Find recipes by meal type. Click recipe names to get
-                    instructions!
-                </p>
-                <div id="lista" class="text-center"></div>
-                <!--Tänne tulee reseptinimiä painaessa ohjeet ruoan laittoon.-->
-                <div id="ruudukko" class="mt-5">
-                    <div class="row">
-                        <div class="col-md mb-4" id="ainekset"></div>
-                        <div class="col-md" id="resepti"></div>
-                    </div>
-                </div>
-
-        </section>
+        <!--Tänne tulee reseptinimien listat painikkeita painessa-->
+        <p class="text-center mt-4">Find recipes by meal type. Click recipe names to get
+            instructions!
+        </p>
+        <!--Tänne tulee reseptinimiä painaessa ohjeet ruoan laittoon.-->
+        <div id="ruudukko" class="container mt-5">
+            <div class="row">
+                <div class="col-md mb-4" id="lista"></div>
+                <div class="col-md" id="resepti"></div>
+            </div>
+        </div>
     </main>
 
     <!--Lisätään alatunniste, jossa Bootstrapin svg-kuva linkkinä omaan Githubiin ja tekijänoikeudet. -->
@@ -104,7 +101,7 @@
                 })
 
             //Tyhjennetään painiketta painaessa ainekset ja resepti laatikot jos niissä on jotain sisältöä.
-            document.getElementById("ainekset").innerHTML = "";
+            
             document.getElementById("resepti").innerHTML = "";
         }
 
@@ -113,7 +110,7 @@
             for (i = 0; i < vast.recipes.length; i++) { //For loopilla käydään läpi haetun tyypin reseptit.
                 nimilista += "<li class='lista-reseptit' onclick='nayta(" + vast.recipes[i].id + ")'>" + vast.recipes[i].name + "</li>"; //Näytetään haetut reseptit listana.
             }
-            document.getElementById("lista").innerHTML = "<br><ul class='list-unstyled'>" + nimilista + "</ul>";
+            document.getElementById("lista").innerHTML = "<ul class='list-unstyled'>" + nimilista + "</ul>";
         }
 
         function nayta(reseptiikka) {
@@ -140,8 +137,7 @@
             for (let j = 1; j < reseptit.instructions.length; j++) {
                 ohjeet += j + ". " + reseptit.instructions[j] + "<br>"; //Listataan myös ohjeet reseptin valmistukseen samalla tavoin.
             }
-            document.getElementById("resepti").innerHTML = "<b>Instructions:</b><br>" + ohjeet;
-            document.getElementById("ainekset").innerHTML = "<b>Ingredients:</b><br>" + ainesosat;
+            document.getElementById("resepti").innerHTML = "<b>Instructions:</b><br>" + ohjeet + "<br><b>Ingredients:</b><br>" + ainesosat;
         }
 
 
