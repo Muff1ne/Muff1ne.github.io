@@ -18,7 +18,7 @@ body {
 }
 
 #logo {
-  width: clamp(2.5rem, 7vw, 3.5rem);
+  width: clamp(2.5rem, 7vw, 3.25rem);
 }
 
 section {
