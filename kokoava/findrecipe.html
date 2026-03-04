@@ -35,7 +35,8 @@
                             day</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-button" class="btn active me-4" aria-current="page" href="findrecipe.html">Find recipes</a>
+                        <a id="nav-button" class="btn active me-4" aria-current="page" href="findrecipe.html">Find
+                            recipes</a>
                     </li>
                     <li class="nav-item">
                         <a id="nav-button" class="btn me-4" href="links.html">More recipes</a>
@@ -45,14 +46,14 @@
         </div>
     </nav>
     <!--Sivuston bannerikuva-->
-    <img src="kuvat/herobanner.webp" alt="hero image" id="bannerimg">
+    <img src="kuvat/herobanner.webp" alt="table full of food" id="bannerimg">
 
 
     <!--Tähän tulee sivuston pääsisältö-->
     <main>
         <section>
             <div class="container mt-5">
-                <h1>Search for <em>recipes</em></h1>
+                <h1 class="text-center">Search for <em>recipes</em></h1>
                 <!--Painikkeet eri reseptityypeille.-->
                 <div class="text-center">
                     <button class="btn" onclick="hae(this)" id="breakfast">Breakfast</button>
@@ -67,9 +68,8 @@
                     instructions!
                 </p>
                 <div id="lista" class="text-center"></div>
-
                 <!--Tänne tulee reseptinimiä painaessa ohjeet ruoan laittoon.-->
-                <div id="ruudukko">
+                <div id="ruudukko" class="mt-5">
                     <div class="row">
                         <div class="col-md mb-4" id="ainekset"></div>
                         <div class="col-md" id="resepti"></div>
@@ -79,9 +79,12 @@
         </section>
     </main>
 
+    <!--Lisätään alatunniste, jossa Bootstrapin svg-kuva linkkinä omaan Githubiin ja tekijänoikeudet. -->
     <footer class="mt-5 p-4 bg-dark text-white text-center">
-        <p>Footer</p>
-        <p>images @ Wikipedia Commons & in good taste</p>
+        <a href="https://github.com/Muff1ne" target="_blank">
+            <img src="kuvat/github.svg" alt="github icon">
+        </a>
+        <p class="mt-4">images @ Wikipedia Commons & in good taste</p>
     </footer>
 
     <script>

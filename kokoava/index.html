@@ -44,7 +44,7 @@
     </div>
   </nav>
   <!--Sivuston bannerikuva-->
-  <img src="kuvat/herobanner.webp" alt="hero image" id="bannerimg">
+  <img src="kuvat/herobanner.webp" alt="table full of food" id="bannerimg">
 
   <main>
     <section>
@@ -65,9 +65,11 @@
           </div>
     </section>
     <section>
-      <div class="img-container d-flex justify-content-center"> <!--Tehdään kuvalle divi, jonka sisältö keskitetään ja muutetaan flex-elementiksi jotta sisällä olevan painikkeen sijaintia voi säätää.-->
+      <div class="img-container d-flex justify-content-center">
+        <!--Tehdään kuvalle divi, jonka sisältö keskitetään ja muutetaan flex-elementiksi jotta sisällä olevan painikkeen sijaintia voi säätää.-->
         <img src="kuvat/Pizza_food.webp" id="ruokakuva" alt="recipe image"> <!--Lisätään kuva, jo-->
-        <button type="button" class="btn" id="find_button" onclick="hae()">Find recipe!</button> <!--Lisätään painike, jolla haetaan resepti.-->
+        <button type="button" class="btn" id="find_button" onclick="hae()">Find recipe!</button>
+        <!--Lisätään painike, jolla haetaan resepti.-->
       </div>
       <div id="info" class="my-5 text-center"></div>
       <div id="nimi" class=" mb-4 text-center"></div>
@@ -84,9 +86,12 @@
     </section>
   </main>
 
+  <!--Lisätään alatunniste, jossa Bootstrapin svg-kuva linkkinä omaan Githubiin ja tekijänoikeudet. -->
   <footer class="mt-5 p-4 bg-dark text-white text-center">
-    <p>Footer</p>
-    <p>images @ Wikipedia Commons & in good taste</p>
+    <a href="https://github.com/Muff1ne" target="_blank">
+      <img src="kuvat/github.svg" alt="github icon">
+    </a>
+    <p class="mt-4">images @ Wikipedia Commons & in good taste</p>
   </footer>
 
   <script>
