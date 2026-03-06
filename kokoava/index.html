@@ -8,7 +8,7 @@
   <!--Kerrotaan hakutuloksissa käyttäjille, millaista sisältöä sivulta löytyy.-->
   <meta name="description"
     content="Discover delicious randomized recipes with full instructions and ingredient lists. Find cooking inspiration in seconds!">
-  <!--Google fontti-->
+  <!--Google fontin lataus-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -24,16 +24,20 @@
   <!--Responsiivinen bootstrap navigaatio-->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
+      <!--Navigaation logo-->
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="kuvat/logo.webp" alt="cooking app logo" id="logo">
         Delish!</a>
+      <!--Hampurilaisvalikon painike-->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!--Navigaatiolinkit-->
       <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
+            <!--Annetaan linkille aktiivinen ulkoasu ja kerrotaan ruudunlukijalle, että tämä linkki viittaa nykyiseen sivuun.-->
             <a class="nav-button btn active me-4" aria-current="page" href="index.html">Recipe of the day</a>
           </li>
           <li class="nav-item">
@@ -51,29 +55,29 @@
 
   <main>
     <div class="container mt-5 ruudukko">
-      <h1>What to <em>cook?</em></h1>
+      <!--Muokataan otsikossa yksittäisen sanan ulkoasua.-->
+      <h1>What to <span class="highlight">cook?</span></h1>
       <div class="row">
         <div class="col-md-6 mb-4">
+          <!--Pidetään otsikoiden numerojärjestys mutta muutetaan niiden kokoa luokkaa muuttamalla.-->
           <h2 class="h5">Out of ideas?</h2>
           <p>Here you can find random recipes and new ideas for cooking with just one click.</p>
-
         </div>
         <div class="col-md-6 mb-4">
           <h2 class="h5">Random recipes...</h2>
-          <p>...with cooking times and full instructions just for you! Try it out now by pressing "Find recipe!"
-            below.
+          <p>...with cooking times and full instructions just for you! Try it out now!
           </p>
-
         </div>
       </div>
     </div>
 
+    <!--Tehdään kuvalle divi, jonka sisältö keskitetään ja joka muutetaan flex-elementiksi jotta sisällä olevan painikkeen sijaintia voi säätää.-->
     <div class="img-container d-flex justify-content-center">
-      <!--Tehdään kuvalle divi, jonka sisältö keskitetään ja muutetaan flex-elementiksi jotta sisällä olevan painikkeen sijaintia voi säätää.-->
-      <img src="kuvat/Pizza_food.webp" id="ruokakuva" alt="food"> <!--Lisätään kuva, jo-->
-      <button type="button" class="btn" id="find-button" onclick="hae()">Find recipe!</button>
+      <img src="kuvat/Pizza_food.webp" id="ruokakuva" alt="food"> 
       <!--Lisätään painike, jolla haetaan resepti.-->
+      <button type="button" class="btn" id="find-button" onclick="hae()">Find recipe!</button>
     </div>
+    <!--Tehdään sisältölaatikot json-haun tietojen näyttämiseen.-->
     <div id="info" class="my-5 text-center"></div>
     <div id="nimi" class=" mb-4 text-center"></div>
 
@@ -89,6 +93,7 @@
 
   <!--Lisätään alatunniste, jossa Bootstrapin svg-kuva linkkinä omaan Githubiin ja tekijänoikeudet. -->
   <footer class="mt-5 p-4 bg-dark text-white text-center">
+    <!--Tehdään kuvalinkki, joka avautuu uuteen välilehteen.-->
     <a href="https://github.com/Muff1ne" target="_blank">
       <img src="kuvat/github.svg" alt="github icon">
     </a>
@@ -100,21 +105,21 @@
 
   <script>
     function hae() {
-      fetch('https://dummyjson.com/recipes') /*Hakee json tietueen eri kansiosta*/
+      fetch('https://dummyjson.com/recipes') //Hakee reseptitiedot APIsta.
         .then(function (response) {
-          return response.json(); /*Muuttaa haetun vastauksen js olio muotoon*/
+          return response.json(); //Muuttaa haetun vastauksen js olio muotoon
         })
         .then(function (responseJson) {
-          kerro(responseJson); /*Kutsutaan kerro funktiota ja annetaan sille aiempi js olio*/
+          kerro(responseJson); //Kutsutaan kerro funktiota ja annetaan sille aiempi js olio
         })
         .catch(function (error) {
-          document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; /*Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla*/
+          document.getElementById("vastaus").innerHTML = "<p>Tietoa ei voida hakea</p>"; //Jos tiedonhaussa tapahtuu virhe, niin tämä näkyy sivulla
         })
     }
 
     function kerro(vast) {
       let lista = vast.recipes; //APIsta otetaan reseptit talteen lista muuttujaan
-      let random = Math.floor(lista.length * Math.random()); // Listassa olevien alkioiden määrä * satunnainen desimaaliluku 0-1 välillä. Math floor pyöristää kokonaislukuun.
+      let random = Math.floor(lista.length * Math.random()); // Listan pituus * satunnainen desimaaliluku 0-1 välillä. Math floor pyöristää kokonaislukuun.
       let valinta = lista[random]; // Listasta otetaan taulukosta se kohta, joka on arvotun satunnaisen luvun kohdalla.
       let ainesosat = "";
       let ohjeet = "";

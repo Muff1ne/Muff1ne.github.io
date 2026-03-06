@@ -5,6 +5,7 @@
     <title>Delish! - Cooking inspiration</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Kerrotaan hakutuloksissa käyttäjille, millaista sisältöä sivulta löytyy.-->
     <meta name="description"
         content="Discover delicious recipes by meal type. Get step-by-step instructions for the recipe you want.">
     <!--Google fontti-->
@@ -54,22 +55,21 @@
     <!--Tähän tulee sivuston pääsisältö-->
     <main>
         <div class="container mt-5">
-            <h1 class="text-center">Search for <em>recipes</em></h1>
+            <h1 class="text-center">Search for <span class="highlight">recipes</span></h1>
             <!--Painikkeet eri reseptityypeille.-->
             <div class="text-center">
-                <button class="btn meal-button" onclick="hae(this)" id="breakfast">Breakfast</button>
                 <!--Kerrotaan funktiolle, mitä painiketta on painettu ja nämä tiedot lähtee funktiolle.-->
+                <button class="btn meal-button" onclick="hae(this)" id="breakfast">Breakfast</button>
                 <button class="btn meal-button" onclick="hae(this)" id="lunch">Lunch</button>
                 <button class="btn meal-button" onclick="hae(this)" id="dinner">Dinner</button>
                 <button class="btn meal-button" onclick="hae(this)" id="snack">Snack</button>
             </div>
         </div>
 
-        <!--Tänne tulee reseptinimien listat painikkeita painessa-->
         <p class="text-center mt-4">Find recipes by meal type. Click recipe names to get
             instructions!
         </p>
-        <!--Tänne tulee reseptinimiä painaessa ohjeet ruoan laittoon.-->
+        <!--Tänne tulee reseptinimien listat painikkeita painessa, ja reseptinimiä painaessa ohjeet ruoan laittoon.-->
         <div class="container mt-5 ruudukko">
             <div class="row">
                 <div class="col-md mb-4" id="lista"></div>
@@ -94,7 +94,7 @@
         function hae(button) { //button-parametri välittää klikatun painikkeen tiedot.
             const type = button.id; //Haetaan painetun painikkeen id.
 
-            fetch(`https://dummyjson.com/recipes/meal-type/${type}`) //Haetaan klikattua painikkeen id:tä vastaava ruokatyyppi APIsta.
+            fetch(`https://dummyjson.com/recipes/meal-type/${type}`) //Haetaan klikatun painikkeen id:tä vastaava ruokatyyppi APIsta.
                 .then(function (response) {
                     return response.json();
                 })
@@ -105,8 +105,7 @@
                     document.getElementById("nimi").innerHTML = "Tietoa ei pysty näyttämään";
                 })
 
-            //Tyhjennetään painiketta painaessa ainekset ja resepti laatikot jos niissä on jotain sisältöä.
-
+            //Tyhjennetään painiketta uudelleen painaessa aiemmat reseptitiedot.
             document.getElementById("resepti").innerHTML = "";
         }
 
@@ -147,8 +146,8 @@
             document.getElementById("resepti").innerHTML = "<b>Instructions:</b><br>" + ohjeet + "<br><b>Ingredients:</b><br>" + ainesosat; //Näytetään haetut tiedot sivulla.
         }
 
-
     </script>
+    <!--Bootstrapin js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
