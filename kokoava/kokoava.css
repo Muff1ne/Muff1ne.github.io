@@ -1,10 +1,10 @@
 body {
-  background: linear-gradient(to bottom, rgb(243, 188, 49), rgb(255, 255, 255));
   /*Sivuston taustaväriksi gradientti.*/
-  background-repeat: no-repeat;
+  background: linear-gradient(to bottom, rgb(243, 188, 49), rgb(255, 255, 255));
   /*Gradientti esiintyy vain kerran eikä toistu.*/
-  background-attachment: fixed;
+  background-repeat: no-repeat;
   /*Gradientti pysyy paikallaan eikä liiku sivun sisällön mukana.*/
+  background-attachment: fixed;
   color: rgb(63, 32, 15);
 }
 
@@ -53,19 +53,21 @@ footer {
 
 /*Erilliset asetukset vain navigaation painikkeille.*/
 .nav-button {
-  width: 100%; /*Hampurilaisvalikossa navigaatiopainikkeet vie 100% mahdollisesta tilasta*/
+  /*Hampurilaisvalikossa navigaatiopainikkeet vie 100% mahdollisesta tilasta*/
+  width: 100%;
   /*Asetetaan väliä painikkeiden välille.*/
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-
+/*Asetetaan eri värit osalle sivuston painikkeista.*/
 .meal-button,
 #find-button {
   background-color: rgb(235, 191, 15);
   border-color: rgb(235, 191, 15);
 }
 
+/*Laitetaan värit aktiivisen sivun/linkin painikkeelle.*/
 .navbar .btn:active,
 .navbar .btn.active,
 #find-button:active {
@@ -74,6 +76,7 @@ footer {
   color: white;
 }
 
+/*Asetetaan väri, kun viedään hiiren osoitin painikkeen päälle.*/
 .btn:hover,
 #find-button:hover {
   background-color: rgb(182, 141, 38);
@@ -134,12 +137,13 @@ h1 {
 }
 
 .lista-reseptit {
-  cursor: pointer;
   /*Selvennetään, että listan reseptit on klikattavia.*/
+  cursor: pointer;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
 }
 
+/*Annetaan reseptilistalle hiiren osoittimella osoittaessa muuttuva väri.*/
 .lista-reseptit:hover {
   color: rgb(182, 141, 38);
 }
@@ -148,6 +152,7 @@ h1 {
   width: 100%;
 }
 
+/*Muokataan linkit -sivun reseptisivujen linkkien ulkoasua.*/
 .nav-pills .nav-link {
   background-color: rgb(243, 188, 49);
   color: rgb(85, 37, 19);
@@ -158,6 +163,8 @@ h1 {
   background-color: rgb(182, 141, 38);
   color: white;
 }
+
+/*Muutetaan ulkoasua riippuen selaimen koosta.*/
 
 @media (min-width: 768px) {
   h1 {
@@ -174,12 +181,14 @@ h1 {
     padding-left: 4rem;
   }
 
+  /*Keskitetään ruudukko-luokan divit ja annetaan maksimileveys.*/
   .ruudukko {
     max-width: 70%;
     margin: auto;
   }
 }
 
+/*Isoimmilla näytöillä navigaation painikkeiden ei tarvitse olla 100% leveydestä.*/
 @media (min-width: 992px) {
   .nav-button {
     width: auto;
