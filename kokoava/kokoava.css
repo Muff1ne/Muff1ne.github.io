@@ -22,12 +22,14 @@ footer {
 }
 
 .navbar-brand {
-  font-family: "Cookie";
+  /*Annetaan google-fontille varafontti*/
+  font-family: "Cookie", "Brush Script MT";
   font-size: clamp(2.25rem, 6vw, 2.75rem);
   /*Lisätään väli logokuvan ja tekstin välille*/
   gap: 0.5rem;
 }
 
+/*Logon koko responsiiviseksi.*/
 #logo {
   width: clamp(2.5rem, 7vw, 3.25rem);
 }
@@ -90,7 +92,7 @@ footer {
 
 h1,
 #resepti-nimi {
-  font-family: "Pacifico";
+  font-family: "Pacifico", Impact;
 }
 
 h1 {
@@ -138,6 +140,7 @@ h1 {
   border-radius: 1rem;
 }
 
+/*Asetukset reseptilistan linkeille.*/
 a.lista-reseptit {
   color: rgb(63, 32, 15);
   /*Poistetaan linkkien alaviivat.*/
