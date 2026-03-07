@@ -61,16 +61,18 @@ footer {
 }
 
 /*Asetetaan eri värit osalle sivuston painikkeista.*/
-.meal-button,
+.meal-buttons .btn,
 #find-button {
   background-color: rgb(235, 191, 15);
   border-color: rgb(235, 191, 15);
 }
 
-/*Laitetaan värit aktiivisen sivun/linkin painikkeelle.*/
+/*Laitetaan värit aktiivisen sivun ja painettaville painikkeille.*/
 .navbar .btn:active,
 .navbar .btn.active,
-#find-button:active {
+.meal-buttons .btn:active,
+.btn#find-button:active
+{
   background-color: rgb(100, 148, 23);
   border-color: rgb(100, 148, 23);
   color: white;
@@ -136,9 +138,14 @@ h1 {
   border-radius: 1rem;
 }
 
-.lista-reseptit {
+a.lista-reseptit {
+  color: rgb(63, 32, 15);
+  /*Poistetaan linkkien alaviivat.*/
+  text-decoration: none;
   /*Selvennetään, että listan reseptit on klikattavia.*/
   cursor: pointer;
+  /*Muutetaan linkit lohkoelementiksi, jotta voidaan muuttaa niiden välistä etäisyyttä.*/
+  display: block;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
 }

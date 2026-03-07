@@ -56,12 +56,12 @@
         <div class="container mt-5">
             <h1 class="text-center">Search for <span class="highlight">recipes</span></h1>
             <!--Painikkeet eri reseptityypeille.-->
-            <div class="text-center">
+            <div class="text-center meal-buttons">
                 <!--Kerrotaan funktiolle, mitä painiketta on painettu ja nämä tiedot lähtee funktiolle.-->
-                <button class="btn meal-button" onclick="hae(this)" id="breakfast">Breakfast</button>
-                <button class="btn meal-button" onclick="hae(this)" id="lunch">Lunch</button>
-                <button class="btn meal-button" onclick="hae(this)" id="dinner">Dinner</button>
-                <button class="btn meal-button" onclick="hae(this)" id="snack">Snack</button>
+                <button class="btn" onclick="hae(this)" id="breakfast">Breakfast</button>
+                <button class="btn" onclick="hae(this)" id="lunch">Lunch</button>
+                <button class="btn" onclick="hae(this)" id="dinner">Dinner</button>
+                <button class="btn" onclick="hae(this)" id="snack">Snack</button>
             </div>
         </div>
 
@@ -111,8 +111,9 @@
         function vast(vast) {
             let nimilista = "";
 
+            
             for (i = 0; i < vast.recipes.length; i++) { //For loopilla käydään läpi haetun tyypin reseptit.
-                nimilista += "<li class='lista-reseptit' onclick='nayta(" + vast.recipes[i].id + ")'>" + vast.recipes[i].name + "</li>"; //Näytetään haetut reseptit listana. Klikkaamalla aloitetaan nayta() -funktio, jolle lähetetään parametrina klikatun reseptin id.
+                nimilista += "<li onclick='nayta(" + vast.recipes[i].id + ")'><a href='#resepti' class='lista-reseptit'>" + vast.recipes[i].name + "</a></li>"; //Näytetään haetut reseptit listana. Klikkaamalla aloitetaan nayta() -funktio, jolle lähetetään parametrina klikatun reseptin id. Listan reseptit linkkejä, joita painamalla sivu hyppää reseptiin.
             }
 
             document.getElementById("lista").innerHTML = "<ul class='list-unstyled'>" + nimilista + "</ul>"; //Näytetään reseptilista sivulla, poistetaan listan oletus-tyyli.
