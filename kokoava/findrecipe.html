@@ -49,8 +49,19 @@
         </div>
     </nav>
     <!--Sivuston bannerikuva-->
-    <img src="kuvat/herobanner.webp" alt="table full of food" id="bannerimg" fetchpriority="high">
+    <!--<img src="kuvat/herobanner.webp" alt="table full of food" id="bannerimg" fetchpriority="high">-->
 
+    <img 
+src="kuvat/herobanner.webp"
+srcset="
+kuvat/herobanner-600.webp 600w,
+kuvat/herobanner-900.webp 900w,
+kuvat/herobanner.webp 1200w,
+kuvat/herobanner-1600.webp 1600w"
+sizes="100vw"
+class="img-fluid"
+alt="Hero image"
+fetchpriority="high">
 
     <!--Tähän tulee sivuston pääsisältö-->
     <main>
