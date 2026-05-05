@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap');
+
+body {
+  font-size: 16px;
+  font-family: "Libre Baskerville";
+  margin: 0;
+  background-color: #dde6c3;
+}
+
+p {
+  color: #413935;
+
+}
+
+h2,
+h3 {
+  font-family: "Libre Franklin";
+  margin-top: 1rem;
+  text-align: center;
+}
+
+main {
+  margin: 2.5rem;
+  padding-bottom: 5rem;
+  color: #413935;
+  text-align: left;
+ 
+}
+
+img {
+  position: relative;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+
+
+.projectimg {
+  height: 12rem;
+  padding: 25px;
+  width: 90%;
+  border-radius: 2em;
+}
+
+.topnav {
+  display: flex;
+  background: linear-gradient(#d87225, #814419);
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 3rem;
+  gap: 3rem;
+  min-height: 3.5rem;
+}
+
+.logo {
+  color: #fff;
+  margin-right: auto;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+  font-family: "Libre Franklin";
+  transition: transform 1s ease, top 1s ease;
+}
+
+
+
+
+
+.heroimg {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pagetitle {
+    text-align: center;
+  color: #d87225;
+  font-size: 2.8rem;
+  white-space: nowrap;
+    font-family: "Unkempt";
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 679px) {
+
+
+
+
+  p {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  
+}
+
+@media only screen and (min-width: 680px) {
+
+
+  .topnav {
+    min-height: 4rem;
+  }
+
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    font-size: 1.2rem;
+    text-align: justify;
+
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+  main {
+    width: 70%;
+    margin: auto;
+    flex: 1;
+  }
+
+  .logo {
+    font-size: 1.7rem;
+    padding-left: 2rem;
+  }
+
+  
+
+  .projecttitle {
+    padding-bottom: 1rem;
+  }
+
+  .pagetitle {
+    font-size: 4rem;
+  }
+
+
+  .projectimg {
+
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+
+  }
+  
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+  .topnav {
+    min-height: 5rem;
+  }
+
+ 
+  main {
+    width: 70%;
+  }
+
+  #contact {
+    margin: auto;
+    width: 60%;
+  }
+
+  .projecttitle {
+    text-align: left;
+    padding-left: 1.5rem;
+  }
+
+
+  .projectimg {
+    transition: transform 1s ease, top 1s ease;
+    width: 90%;
+  }
+
+  .projectimg:hover {
+    transform: scale(1.1);
+  }
+
+  img {
+    max-height: 350px;
+  }
+
+  h2 {
+
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    padding-left: 0;
+  }
+
+
+
+  .maincontent {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+
+  }
+
+  .column {
+    flex: 1;
+
+  }
+}

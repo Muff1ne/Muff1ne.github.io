@@ -43,6 +43,10 @@ p {
   line-height: 1.5; /*Riviväli tekee tekstistä helppolukuisempaa.*/
 }
 
+.intro-line {
+  font-style: italic;
+}
+
 #navbar-logo {
   font-family: 'KNIGHT WARRIOR', serif;
   font-weight: 600;
